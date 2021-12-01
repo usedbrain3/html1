@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript toDateString()</h2>
+    <p>The toDateString() method converts a date to a date string:</p>
+
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <script>
+      function format(date) {
+        var d = date.getDate();
+        var m = date.getMonth() + 1;
+        var y = date.getFullYear();
+        return (
+          "" + y + "-" + (m <= 9 ? "0" + m : m) + "-" + (d <= 9 ? "0" + d : d)
+        );
+      }
+
+      var today = new Date();
+      var dateString = format(today);
+      alert(dateString);
+    </script>
+  </body>
+</html>

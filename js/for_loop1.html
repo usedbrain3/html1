@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>For Loop</title>
+ 
+ <style>
+ .container {
+    margin: 300px;
+    padding: 40px;
+    border: 2px solid black;
+    background-color: #33FFE3;
+    font-family: verdana, sans-serif;
+    
+   }
+  </style>
+ 
+ </head>
+  <body>
+ 
+ <div class="container">
+ 
+ <p id="demo"></p>
+ 
+ <script>
+      let text = "";
+
+      for (let i = 0; i < 5; i++) {
+        text += "<h2>The number is " + i + "</h2><br>";
+      }
+
+      document.getElementById("demo").innerHTML = text;
+    </script>
+    
+ </div><!--end of container-->
+ 
+  </body>
+</html>
+
