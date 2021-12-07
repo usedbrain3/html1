@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Final Exam Study Guide</title>
+		<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="quiz.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js" type="text/javascript" charset="utf-8"></script>
+    </head>
+
+    <body>
+        <header>
+            <h1>Final Exam Study Guide</h1>
+
+            <div id="talleys">
+                <div class="talley_box">
+                    <img src="images/check.svg" alt="check symbol">
+                    <br>
+                    <h2 id="correct_talley">0</h2>
+                </div>
+                <div class="talley_box">
+                    <img src="images/x.svg" alt="x symbol">
+                    <br>
+                    <h2 id="wrong_talley">0</h2>
+                </div>
+            </div>
+        </header>
+
+        <div id="card_container">
+            <!--Question Card -->
+            <div id="card"></div>
+
+            <div id="button_container">
+                <div id="truefalse">
+                    <div class="button" id="trueButton">
+                        <h2>True</h2>
+                    </div>
+                    <div class="button" id="falseButton">
+                        <h2>False</h2>
+                    </div>
+                </div>
+                <div class="button" id="next" style="display:none;">
+                    <h2>Next</h2>
+                </div>
+            </div>
+        </div>
+
+        <div id="question_container" style="display:none;">
+            <script id="handlebars_text" type="text/x-handlebars-template">
+                <h1>Questions:</h1>
+                <br>
+                {{#each questions}}
+                <h2>{{question}}</h2>
+                <br>
+                <h3>Answer: {{correctAnswer}}</h3>
+                <br>
+                <br>
+                {{/each}}
+            </script>
+            <div id="box">
+            </div>
+        </div>
+
+        <footer>
+            <p><span id="show_questions">Show Questions</span><br><br>
+            Website Design by Ana Nelson - CWEB Student and Dunwoody College of Technology</p>
+        </footer>
+
+        <script src="quiz.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var source = $("#handlebars_text").html();
+                var template = Handlebars.compile(source);
+
+                
+                var questionsArray = { 
+                    "questions" : [
+                        {
+                            "question": "Media Queries allow CSS styling to change based on browser conditions", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "Flexible Structure does not let content on a website adapt to the size of the browser window", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "Complementary colors are next to each other on the color wheel", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "JQuery is a JavaScript library", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "Analogous colors are opposite each other on the color wheel", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "Input element tags allow users to input data", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "The CSS property 'float' can change the position of a specific element on a webpage", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "Normal flow is the default positioning of elements in HTML", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "An valid example of a pseudo-class is 'h1:hover'", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": ".innerHTML changes an HTML element's name", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "Server-side scripting is scripts that are written to run on the server side rather than on the frontend", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "Operator precedence determines determines the order in which expressions are validated", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "Progressive Enhancement is a JavaScript command that enhances your code for you", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "Arrays can only contain one object", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "While statements will repeat a function as long as the conditions stated are still met", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "Attributes are required on HTML elements", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "A valid example of an argument is 'getElementById('h1'), where h1 is the argument", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "Client-side scripting is scripts written in a language made to run on the server side, or the backend", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "a 'for' statement is an example of a looping statement", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "JavaScript is not case-sensitive", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "'container' is a valid identifier, or ID", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "Initializing is giving a value to a variable", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "if statements execute at least once", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "'var object = document.getElementByID('objectID')' is a valid example of defining an object", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "<script> tags are used to define JavaScript text", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "getElementByID returns all instances of a certain element", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "++ is a concatenation operator", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "'' can be used to create an emopty string", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "<link href='script.js'> is a valid way to import a JavaScript document", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "/* this is a CSS comment */", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "'onclick' is a valid example of an event handler", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "++ is not a unary operator", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "'text-size' can be used to make a font bold", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "A global variable is defined outside of function", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "'padding: 5px 2px 3px 1px;' targets each side of an element clockwise starting from the top", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "candy[3]='Sour Patch Kids'; adds 'Sour Patch Kids' as the third element in the candy array", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": ".box is used to select an element with the ID 'box'", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": ".container is used to select an element with the class 'container'", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "<image href='image.png' alt='image'> is a valid way to import an image into HTML", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question": "<!-- This is an HTML comment -->", 
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question": "<!-- This is a JavaScript comment -->", 
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "window.alert() will make the browser play an alert sound",
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "for statements allow you to initialize a counter that changes its value each time the statements are ran",
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question" : "indexes returns the number of elements in an array",
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "true and false are Boolean values",
+                            "correctAnswer" : "True"
+                        },
+                        { 
+                            "question" : "Functions can contain more than one statement that can be executes as a single unit",
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question" : "Function parameters are placed within curly brackets",
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "A local variable is defined outside of a function",
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "JavaScript is a strongly typed coding language",
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "The content of the HTML element with the ID 'box' can be targeted using document.getElementByID('box').innerHTML;",
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question" : "JavaScript functions are written as function = functionExample()",
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "if(x == 20) is a valid example of an if statement",
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question" : "if(x != 20) is the correct way to write x is NOT equal to 20",
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question" : "A for loop starts with for(x == 5; y++)",
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "var candy = ['Snickers', 'Nerds', 'M&Ms'] is the correct way to write a JavaScript array",
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "JavaScript is not the same as Java",
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question" : "'var Candy' is a valid way of declaring a JavaScript variable",
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question" : "JavaScript is not case-sensitive",
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "'.addEventListener('click', function()) adds an 'onclick' event listener to an element",
+                            "correctAnswer" : "True"
+                        },
+                        {
+                            "question" : "A function can only be called once",
+                            "correctAnswer" : "False"
+                        },
+                        {
+                            "question" : "getElementsByArray can retrieve a JavaScript array",
+                            "correctAnswer" : "False"
+                        }
+                        
+                    ]}
+
+                var compiledHTML = template(questionsArray);
+                // Add the compiled html to the page
+                $('#box').html(compiledHTML);
+                });  
+            </script> 
+        
+    </body>
+</html>
