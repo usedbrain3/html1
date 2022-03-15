@@ -149,7 +149,7 @@ var questions = [
                     },
                     {
                         "question" : "borders can be coded with width in pixels",
-                        "correctAnswer" : "true"
+                        "correctAnswer" : "True"
                     },
                     {
                         "question" : "Outline CSS is a valid CSS method",
