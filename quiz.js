@@ -40,7 +40,7 @@ var questions = [
                         "correctAnswer" : "False"
                     },
                     {
-                        "question" : "The correct HTML for referring to an external style sheet is <stylesheet>style.css</stylesheet>",
+                        "question" : "The correct HTML for referring to an external style sheet is with "stylesheet"style.css"/stylesheet",
                         "correctAnswer" : "False"
                     },
                     {
