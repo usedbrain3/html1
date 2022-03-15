@@ -1,5 +1,5 @@
 var questions = [
-                    {
+ {
                         "question": "HTML stands for Hypertext Markup Language", 
                         "correctAnswer" : "True"
                     },
@@ -40,7 +40,7 @@ var questions = [
                         "correctAnswer" : "False"
                     },
                     {
-                        "question" : "The correct HTML for referring to an external style sheet is stylesheet=style.css/stylesheet",
+                     "question" : "The correct HTML for referring to an external style sheet is stylesheet=style.css/stylesheet,
                         "correctAnswer" : "False"
                     },
                     {
@@ -48,11 +48,11 @@ var questions = [
                         "correctAnswer" : "True"
                     },
                     {
-                        "question" : "<background>red</background> adds a red background to an HTML document",
+                        "question" : "//background\\red//background\\ adds a red background to an HTML document",
                         "correctAnswer" : "False"
                     },
                     {
-                        "question" : "<style></style> refers to an internal style sheet",
+                        "question" : "There are 3 ways to add styles to a web page.",
                         "correctAnswer" : "True"
                     },
                     {
@@ -64,11 +64,11 @@ var questions = [
                         "correctAnswer" : "True"
                     },
                     {
-                        "question" : "<a href='dunwoody.edu'>Dunwoody</a> will create a clickable hyperlink for the text 'Dunwoody'",
+                    "question" : "a href='dunwoody.edu'Dunwoody will create a clickable hyperlink for the text 'Dunwoody'",
                         "correctAnswer" : "True"
                     },
                     {
-                        "question" : "<!-- This is a CSS comment --",
+                        "question" : "!-- This is a CSS comment --",
                         "correctAnswer" : "False"
                     },
                     {
@@ -88,7 +88,7 @@ var questions = [
                         "correctAnswer" : "True"
                     },
                     {
-                        "question" : "<h6> is the largest heading tag",
+                        "question" : "h6 is the largest heading tag",
                         "correctAnswer" : "False"
                     },
                     {
@@ -108,7 +108,7 @@ var questions = [
                         "correctAnswer" : "True"
                     },
                     {
-                        "question" : "<img src='image.png' alt='image'> is the correct HTML for inserting an image",
+                        "question" : "img src='image.png' alt='image' is the correct HTML for inserting an image",
                         "correctAnswer" : "True"
                     },
                     {
@@ -120,7 +120,7 @@ var questions = [
                         "correctAnswer" : "True"
                     },
                     {
-                        "question" : "<title> will display content within the browser tab",
+                        "question" : "title will display content within the browser tab",
                         "correctAnswer" : "True"
                     },
                     {
@@ -128,15 +128,15 @@ var questions = [
                         "correctAnswer" : "False"
                     },
                     {
-                        "question" : "<!DOCTYPE html> is the correct doctype for HTML5",
+                        "question" : "!DOCTYPE html is the correct doctype for HTML5",
                         "correctAnswer" : "True"
                     },
                     {
-                        "question" : "<navigation> defines navigation links",
+                        "question" : "the semantic element called 'navigation' defines navigation links",
                         "correctAnswer" : "False"
                     },
                     {
-                        "question" : "<header></header> generally contains the title, logo, and navigation of the webpage",
+                        "question" : "the 'header' generally contains the title, logo, and navigation of the webpage",
                         "correctAnswer" : "True"
                     },
                     {
