@@ -1,168 +1,168 @@
 var questions = [
-    {
-        "question": "HTML stands for Hypertext Markup Language", 
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "Semantic markup only effects the presentation of an HTML document", 
-        "correctAnswer" : "False"
-    },
-    { 
-        "question" : "A Style Sheet is used to change the look of an HTML page",
-        "correctAnswer" : "True"
-    }, 
-    {
-        "question" : "The World Wide Web Consortium is a corporate organization that dictates how the internet can be used",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "Active White Space is the amount of the color white on a page",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "SSL, or Secure Sockets Layer, is a encryption based internet security protocol",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "An analagous color scheme is when all the colors used are next to each other on the color wheel",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "A complementary color scheme is when the colors used are opposite each other on the color wheel",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "The internation standard for filenames is often called File Transfer Protocol",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "CSS stands for Computer Style Sheets",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "The correct HTML for referring to an external style sheet is &#60;stylesheet&#62; style.css &#60;/stylesheet&#62;",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "The head of an HTML document is the correct place to refer to an external style sheet",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "&#60;background&#62; red &#60;/background&#62; adds a red background to an HTML document",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "&#60;style&#62;&#60;/style&#62; refers to an internal style sheet",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "Inline styles are defined using the attribute tag inline",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "This syntax is correct: body{ color: white; }",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "&#60;a href='dunwoody.edu'&#62; Dunwoody &#60;/a&#62; will create a clickable hyperlink for the text 'Dunwoody'",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "&#60;!-- This is a CSS comment --&#62;",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "h1{ background-color: red; } will give all h1 tags a red background",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "The CSS property text-size will change the size of text",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "The CSS property font-weight can make text bold",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "The CSS property font-family can be used to change the font",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "&#60;h6&#62; is the largest heading tag",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "padding: 10px 20px 5px 1px targets each side of an element in a counter-clockwise order starting from the top",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "Padding is used to create white space outside of an element",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "To select an element with the id 'Dunwoody', .Dunwoody is used",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "To select an element with the class name 'Dunwoody', .Dunwoody is used",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "&#60;img src='image.png' alt='image'&#62; is the correct HTML for inserting an image",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "HTML comments cannot be used in CSS",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "HTML is the structuring of content on a webpage, and CSS is the styling of the content",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "&#60;title&#62; will display content within the browser tab",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "href defines alternative text for an image",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "&#60;!DOCTYPE html&#62; is the correct doctype for HTML5",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "&#60;navigation&#62; defines navigation links",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "&#60;header&#62;&#60;/header&#62; generally contains the title, logo, and navigation of the webpage",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "rgb(100, 5, 255) is a hexadecimal color value",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "4px is a relative measurement value",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "Content layer (bottom), background color layer (middle), background-image layer (top) is the correct order for Element Layers",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "Outline CSS is a valid CSS method",
-        "correctAnswer" : "False"
-    },
-    {
-        "question" : "@font-face is used to bring in open-source fonts to a webpage",
-        "correctAnswer" : "True"
-    },
-    {
-        "question" : "position:absolute specifies that nothing can be to the right of left of a box element",
-        "correctAnswer" : "False"
-    }
+ {
+                        "question": "HTML stands for Hypertext Markup Language", 
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "Semantic markup only effects the presentation of an HTML document", 
+                        "correctAnswer" : "False"
+                    },
+                    { 
+                        "question" : "A Style Sheet is used to change the look of an HTML page",
+                        "correctAnswer" : "True"
+                    }, 
+                    {
+                        "question" : "The World Wide Web Consortium (W3C) is a corporate organization that dictates how the internet can be used",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "Active White Space is the amount of the color white on a page",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "This is a css comment /*comment*/",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "Hexidecimal colors need a pound sign/hashtag in front of them",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "The inventor of HTML is Tim Berners Lee",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "The international standard for filenames is often called File Transfer Protocol",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "CSS stands for Computer Style Sheets",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                     "question" : "The correct HTML for referring to an external style sheet is stylesheet=style.css/stylesheet",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "The head of an HTML document is the correct place to refer to an external style sheet",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "//background\\red//background\\ adds a red background to an HTML document",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "There are 3 ways to add styles to a web page.",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "Inline styles are defined using the attribute tag inline",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "This syntax is correct: body{ color: white; }",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "a href='dunwoody.edu' will create a clickable hyperlink for the text 'Dunwoody'",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "!-- This is a CSS comment --",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "h1{ background-color: red; } will give all h1 tags a red background",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "The CSS property text-size will change the size of text",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "The CSS property font-weight can make text bold",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "The CSS property font-family can be used to change the font",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "h6 is the largest heading tag",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "padding: 10px 20px 5px 1px targets each side of an element in a clockwise order starting from the top",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "Padding is used to create white space outside of an element",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "To select an element with the id 'Dunwoody', .Dunwoody is used",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "To select an element with the class name 'Dunwoody', .Dunwoody is used",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "img src='image.png' alt='image' is the correct HTML for inserting an image",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "HTML comments cannot be used in CSS",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "HTML is the structuring of content on a webpage, and CSS is the styling of the content",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "title will display content within the browser tab",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "href defines alternative text for an image",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "!DOCTYPE html is the correct doctype for HTML5",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "the semantic element called 'navigation' defines navigation links",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "the 'header' generally contains the title, logo, and navigation of the webpage",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "rgb(100, 5, 255) is a hexadecimal color value",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "Web servers are not case sensitive (upper and lowercase letters)",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "borders can be coded with width in pixels",
+                        "correctAnswer" : "true"
+                    },
+                    {
+                        "question" : "Outline CSS is a valid CSS method",
+                        "correctAnswer" : "False"
+                    },
+                    {
+                        "question" : "images must have alternative text in their tags",
+                        "correctAnswer" : "True"
+                    },
+                    {
+                        "question" : "floats will not help with page layout",
+                        "correctAnswer" : "False"
+                    }
 ];
 
 // Load first question on page laod
