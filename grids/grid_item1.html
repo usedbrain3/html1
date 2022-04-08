@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<!-- This is my comment -->
+<!-- Your name - Template-->
+
+    <meta charset="UTF-8">
+    <meta name="description" content="CWeb 1010 at Dunwoody">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="TTichich">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HTML & CSS - Grid with 5 sections</title>
+
+<style>
+
+body {background-color: #CBE432;}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  background-color: #1B3409;
+  margin: 30px;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: #9BD770;
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.item1 {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.item2 {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+}
+
+.item5 {
+  grid-column: 1 / span 3;
+  grid-row: 3;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: blue;
+    /*background-image: url("images/fractal_blue1.jpg");*/
+  }
+  .item5 {background-color: yellow;}
+  h1, p {color: white;}
+  }
+</style>
+</head>
+<body>
+
+<h1>A Five Items Grid Layout</h1>
+
+<div class="grid-container">
+  <div class="grid-item item1">1</div>
+  <div class="grid-item item2">2</div>
+  <div class="grid-item item3">3</div>  
+  <div class="grid-item item4">4</div>
+  <div class="grid-item item5">5</div>
+</div>
+
+<p>Direct child elements(s) of the grid container automatically becomes grid items.</p>
+
+<p>Item 1, 2, and 5 are set to span multiple columns or rows.</p>
+
+</body>
+</html>
+
+
