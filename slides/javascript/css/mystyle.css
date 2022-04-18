@@ -1,0 +1,65 @@
+.box{
+    
+      flex:  1 0 300px;
+      -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+      animation-name: example;
+      animation-duration: 4s;
+      width: 200px;
+      height: 200px;
+      float:  left;
+      border:  solid 2px #333;
+      margin: 10px;
+      font-size: 24px;
+      border-radius: 14px;
+    
+    
+    }
+.box_two{
+    
+        flex:  1 0 400px;
+       
+        width: 400px;
+       
+        float:  left;
+        border:  solid 2px #333;
+        margin: 20px;
+        font-size: 24px;
+      
+      
+      }
+
+#flexcontain{
+    margin:auto;
+    display:  flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-content: space-around;
+    
+}
+
+.green{
+    background-color: red;
+    color: white;
+    
+}
+.red{
+    background-color: green;
+    color: white;
+}
+.blue{
+    background-color: rgb(4, 149, 185);
+    color: white;
+}
+.yellow{
+    background-color: #f6aa01;
+    color: white;
+}
+.orange{
+    background-color: orangered;
+    color: white;
+}
+.aquamarine{
+    background-color: #00c080;
+    color: white;
+}
