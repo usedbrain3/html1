@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Introduction to User Experience">
+		<meta name="author" content="C. Fulton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>JavaScript Functions, Objects and Structure </title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+			    color: #2d4650;
+			}
+			#boxstyle{
+				color: #333;
+			    padding: 1em;
+			    background-color: rgba(255,255, 255, .9);
+			    border-radius: 14px;
+			}
+			#boxstyle2{
+				color: white;
+			    padding: 1em;
+			    background-color: rgba(0,0, 0, .5);
+			    border-radius: 14px;
+			    background-size: 80%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#252523">
+				    <h3 style="color: white; text-shadow: 2px 2px 10px #333;">JavaScript Functions, Objects and Structure</h3>
+				    <img src="images/js/js_bg_two.jpg" width="720" style="box-shadow: none; border: none;"alt="Javascript structure homepage image">
+				    <h3 style="color: white; text-shadow: 2px 2px 10px #333;">Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#252523">
+				    <h3>Learning Objectives</h3>
+				    <ul style="font-size: 26px;">
+						<li>Understanding and Implementing JS Functions</li>
+						<ul>
+							<li>What is a function | Function Syntax | Defining and Calling a Function | Function Parameters</li>
+							<li>Types of function</li>
+							<ul>
+								<li>Named | Anonymous | Arrow | Self-Involking</li>
+							</ul>
+							<li>Variable Scope - Local and Global variables</li>
+							<li>Returning values from a function</li>
+
+						</ul>
+						<li>Understanding and Implementing JS Objects</li>
+						<ul>
+							<li>Why use Objects</li>
+							<li>User Defined Objects</li>
+							<li>Types of Objects</li>
+							<ul>
+								<li>Object Literal | Anonymous | Arrow | Self-Involking</li>
+							</ul>				
+						</ul>
+				        <li>Practice with Functions using Goople Maps API</li>
+				        <ul>
+							<li>Practice with calling and involking functions</li>
+				        	<li>Passing arguments to Google Map API</li>
+							
+						</ul>
+
+
+				    </ul>
+				</section>
+				<section data-background="images/js/code_bg.png">
+					<h3>Types of Functions</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 28px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Named and Anonymous Functions</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Arrow Functions</p></div>
+						<div class="box green" style="font-size: 28px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Self Involking Functions</p></div>
+
+					</div>
+					<p>Each type have specific use cases </p> 
+				</section>
+				<section data-background="#131313">
+					<h4> Named Function</h4>
+					
+					<div id="flexcontain" style="margin-top: -15px;">
+						
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/js/function.png" width="580" alt="function breakdown image">
+						
+	
+							
+							<ul>	
+								<li style="font-size: 18px;">The above diagram displays a named function called displayGreeting.  Two steps, 1) First define the function and 2) call the function.</li>
+								<li style="font-size: 18px;">You can pass and return information from functions</li>
+								<!--<li style="font-size: 18px;"></a></li>-->
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#fff">
+					<h3>In-class Activity  </h3>
+					
+					<div id="flexcontain">
+						
+						<pre>
+							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;!DOCTYPE html&gt;
+								&lt;html&gt;
+							        &lt;head&gt;
+									
+										&lt;title&gt;Working with named Functions&lt;/title&gt;
+									&lt;/head&gt;
+									&lt;body&gt;
+											&lt;div &gt; Click Me &lt;/div&gt;
+
+									&lt;/body&gt;
+								&lt;/html&gt;
+
+
+							</code>
+						</pre>
+						
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								
+								<p style="font-size: 24px; margin-top: -12px;">Apply the following bullet points to the HTML code above.</p>
+								<ul>
+									<li style="font-size: 20px;">Create a named function called pageDetails().  The statements within the function will bring up a window alert box that outputs three things.  1) The documents doctype.  2) the document title and URL.</li>
+									<li style="font-size: 20px;">Using the html code above add an event attribute to the &lt;div&gt; tag that will call the pageDetails() method once the end-user clicks the button.</li>
+								</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#131313">
+					<h4>Arrow Function</h4>
+					
+					<div id="flexcontain" style="margin-top: -15px;">
+						
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/js/function_diagram_twob.png" width="620" alt="arrow function example image">
+				
+							<ul>	
+								<li style="font-size: 18px;">Arrow functions allows a short syntax for writing function expressions. You don't need the function keyword, the return keyword, and the curly brackets.</li>
+								<li style="font-size: 18px;">You can only omit the return keyword and the curly brackets if the function is a single statement.</li>
+								<!--<li style="font-size: 18px;"></a></li>-->
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="images/js/js_objects.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">JS Objects</h1>
+				</section>
+				<section data-background="white">
+				    <h3>What is <b>OOP</b>?</h3><br>
+				    <p>A way of organizing your code to focus on real world nouns (Person,  place, thing or idea)</p>
+				</section>
+				<section data-background="white">
+					<h2>What is <b>OOP</b>?</h2><br>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/SS-9y0H3Si8?start=4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section data-background="#eee">
+					<h4>Abstraction</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/js/person-diagram.png" width="690" style="box-shadow: none; border: none;"alt="person object image"> 
+							<p>Creating a simple model of a more complex thing, which represents its most important aspects in a way that is easy to work with for our program's purposes</p>
+
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Object Literal Structure and Break-down</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>
+								<li style="font-size: 22px;">A JavaScript object is a collection of named values</li>
+								<li style="font-size: 22px;">When you create an object, you define both its attributes and its methods.</li>
+								<li style="font-size: 22px;">The <b>attributes</b> hold data for each object instance.</li>
+								<li style="font-size: 22px;">the <b>methods</b> are verbs that take action against the data for each instance.</li>
+							</ul>
+
+															<pre>
+								<code style="font-size: 16px; line-height: 20px;" width="600" height="700" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+    var person = {
+        name: "Parker Walker",
+        age: 29,
+        gender: "male",
+        interest: "everything",
+        
+        bio: function(){ 
+           console.log( this.name + " is " + this.age + "years old.  
+                         They like " + this.interest);
+       },
+        greeting: function() {
+           console.log("Hi! I'm " + this.name);
+       }
+       
+    }
+							
+	
+								</code>
+							</pre>
+						
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Video Lectures</h3>
+					<div id="flexcontain">
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/060B-4P6mWE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/732gJLkZpqw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/nnlI8VKxxZ0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+					</div>
+					<a href="https://www.youtube.com/playlist?list=PLvpKGAo_xLN9iipO4o_gc-IXkC2lFQXlW" style="font-size: .7em;">Click here for playlist</a> </a>
+				</section>
+
+
+				<!--<section data-background="#fff">
+					<h2>Traditional Float layout Considerations</h2>
+
+					<img src="images/layout/considerations.PNG" width="350" style="box-shadow: none; border: none;"alt="Dropped columns with floating elements">
+
+					<ul>	
+						<li style="font-size: 22px;">If you are floating an element within another element, the order of the elements is important</li>
+						<li style="font-size: 22px;">Column drops occur when the total width of the columnar elements in a page layout exceeds the width of their containing element</li>
+						<li style="font-size: 22px;">Containers help to format and center box elements.  Use margin auto to your advantage.</li>
+
+					</ul>
+
+				</section>
+				<section data-background="images/layout/comp_bg.jpg">
+					<h1 id="boxstyle2"> CSS Flexbox</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Understanding Flexbox</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #BDD358;"><p>aims at providing a more efficient way to lay out, align and distribute space among items in a container</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p>flexbox layout is direction-agnostic as opposed to the regular layouts</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p>flex container expands items to fill available free space, or shrinks them to prevent overflow</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #204E4A;"><p>the main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #38726C;"><p> Flexbox layout is most appropriate to the components of an application, and small-scale layouts</p></div>
+					</div>
+					<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using Flexbox</a> 
+				</section>
+				<section data-background="#fff">
+					<h4>In-Class Activity </h4>
+					
+					<div id="flexcontain">
+						
+							<pre>
+							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;!DOCTYPE html&gt;
+								&lt;html&gt;
+							        &lt;head&gt;
+									
+										&lt;title&gt;CSS Flexbox &lt;/title&gt;
+									&lt;/head&gt;
+									&lt;body&gt;
+										&lt;aside&gt; #1 &lt;/aside&gt;
+										&lt;aside&gt; #2 &lt;/aside&gt;
+										&lt;aside&gt; #3 &lt;/aside&gt;
+									&lt;/body&gt;
+								&lt;/html&gt;
+
+
+							</code>
+						</pre>
+						
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								
+								<p style="font-size: 22px; margin-top: -12px;">Apply the following bullet points to the HTML code below.</p>
+								<ul>
+									<li style="font-size: 16px;">Add a container to the webpage that has a width of 80% and center everything that displays in the browser. </li>
+									<li style="font-size: 16px;">Apply a 3px solid orangedred border to the container and a 3px solid green border to the immediate children of the container. </li>
+									<li style="font-size: 16px;">Create flex items of all the immediate children of the container.  Each aside box element should have a flex-grow of 1, a flex-shrink of 0 and flex basis of auto and a height of 325px. Apply 10px of margin around each flex item. </li>
+									<li style="font-size: 16px;">Justify the content for each box to space evenly.</li>
+								</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="images/layout/css_grid.jpg">
+					<h1 id="boxstyle2"> CSS Grid</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>CSS Grid Steps</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #32E875; color: #333;"><p><b>Step 1</b><br> Define a container element as a grid with <em>display: grid</em></p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p><b>Step 2</b><br> Set the column and row sizes with grid-template-columns and grid-template-rows</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p><b>Step 3</b><br> Place child elements into the grid with grid-column and grid-row</p></div>
+
+					</div>
+					<a href="https://css-tricks.com/snippets/css/complete-guide-grid/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using CSS Grid</a> 
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Defining the Grid</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="css hljs"  data-trim contenteditable>
+									.grid {
+									 display: grid;
+									 grid-template-columns: repeat(4, 1fr);
+									 grid-template-rows: repeat(4, 75px);
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/define_grid.jpg" width="525" style="box-shadow: none; border: none;"alt="Defining CSS Grid">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Defining a Complex Grid</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 display: grid;
+									 grid-template-columns: repeat(4, 1fr);
+									 grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/grid_columns_rows.jpg" width="525" style="box-shadow: none; border: none;"alt="Complex Grid layout">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Positioning items in the Grid using line numbers</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 	display: grid;
+									 	grid-template-columns: repeat(4, 1fr);
+									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									}
+									
+									#item1{
+										grid-column-start: 2;
+										gird-column-end: 4;
+										grid-row-start: 3;
+										grid-row-end: -1;
+										background-color: red;
+									}
+									
+									#item2{
+										grid-column: 3;
+										grid-row: 1;
+										background-color: red;
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/grid_template_lines.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using lines">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Positioning items in the Grid using area names</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 	display: grid;
+									 	grid-template-columns: repeat(4, 1fr);
+									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									 	grid-template-areas: "...." 
+									 					     "...item1" 
+									 					     "item2 item2 item2 item1" 
+									 					     "item2 item2 item2 . ";
+									}
+									
+									#item1{
+										grid-area: item1;
+									}
+									
+									#item2{
+										grid-area: item2;
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/grid_template_areas.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using template areas">
+						</div>
+
+					</div>
+
+				</section>
+				<!--<section data-background="#eee">
+					<h2>Why User Research?</h2>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>User Research</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #216869;"><p><b style="font-size: 30px;">Observations</b> <br> Give people tasks or instructions and watch them use your design, without help. </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #49A078;"><p><b style="font-size: 30px;">Interviews</b> <br> Ask prospective users questions about their expectations of your design.</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #9CC5A1;"><p><b style="font-size: 30px;">Task Analysis</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;"><p><b style="font-size: 30px;">Focus Groups</b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #333;"><p><b style="font-size: 30px;">Surveys</b> <br>  a structured questionnaire that your target audience completes over the internet generally through a filling out a form</p></div>
+					</div>
+					<a href="https://www.usability.gov/what-and-why/user-research.html" style="font-size: .4em;">Click here for more information about user research</a> </a>
+				</section>
+				<section data-background="#fff">
+					<a href="https://www.nngroup.com/articles/ux-research-cheat-sheet/" style="font-size: 20px;"><h3>Nielsen Norman Group Research</h3></a>
+					<img src="images/ux/frequentuxmethods.png" width="550" style="box-shadow: none; border: none;"alt="Frequent UX method graphic">
+					
+				</section>
+				<section data-background="#eee">
+						<h4>When to use which UX research method</h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/OtUWbsvCujM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/ia_pic.gif" width="800" style="box-shadow: none; border: none;"alt="Information Architecture graphic">
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/louisrosenfeld.gif" width="870" style="box-shadow: none; border: none;"alt="Information Architecture diagram">
+				</section>
+				<section data-background="#fff">
+					<p>Information Architecture and navigation considerations</p>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Information design is the most important factor in the success of your site</li>
+								<li style="font-size: 26px;">What do users want when they get to your site?</li>
+								<li style="font-size: 26px;">Anticipate and plan for user actions</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Do not make users navigate through too many layers of information</li>
+								<li style="font-size: 26px;">Follow the three clicks rule</li>
+								<li style="font-size: 26px;">Use consistent navigation</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+				    <h5>Navigation Considerations - Orient the User</h5>
+				    <p style="font-size: 28px;">Provide enough location information to let the user answer the following navigation questions:</p>
+				    <ul style="text-align: center; list-style-type: none; text-shadow: 1px 1px 5px #333;">
+						<li style="color: #82C09A;">Where am I?</li>
+						<li style="color: #8C001A;">Where can I go?</li>
+						<li style="color: #456990;">How did I get there?</li>
+						<li style="color: #636940;">How do I get back to where I started?</li>
+				
+				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Sample Website Architecture</h3>
+					<img src="images/ux/sitearchdiagram.gif" width="700" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
+				</section>
+				<section data-background="#000">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/6RhFN6cul3w?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="000">
+					<h3>Use Cases</h3>
+					<ul>
+						<li>Describes one specific interaction between the user and the software</li>
+						<li>The use cases are gathered from the clients requirements which defines the scope requirements.</li>
+						<li><a href="https://www.usability.gov/how-to-and-tools/methods/use-cases.html">Usability.gov - Explanation of Use cases</a></li>
+					</ul>
+					
+				</section>
+				<section data-background="000">
+					<h3>Example Use case</h3>
+					<img src="images/ux/use_case.PNG" alt="example of use case"/>
+					
+				</section>
+				<section data-background="#000">
+					<h3>User Personas</h3>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/B23iWg0koi8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					
+				</section>
+				<section data-background="#fff">
+				    <h3>Why Usability?</h3>
+				    <img src="images/ux/ketchup.jpg" width="650" style="box-shadow: none; border: none;"alt="usability ketchup image">
+				    
+				</section>
+				<section data-background="#eee">
+				    <iframe width="560" height="315" src="https://www.youtube.com/embed/lhQOx6OxA0E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Ml92QEqE-RQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+				    <h3>Usability Components</h3>
+				    <img src="images/ux/Usability_Components.png" width="750" style="box-shadow: none; border: none;"alt="usability components">
+				    
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
+					<q> Usability refers to the ease of access and/or use of a product or website.</q>
+				</section>
+				<section data-background="#fff">
+					<h3>Website Usability</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h4>Website usability considerations</h4>
+							<ul>	
+								<li style="font-size: 26px;">Speed, Uptime</li>
+								<li style="font-size: 26px;">Site errors - broken links</li>
+								<li style="font-size: 26px;">Visual Factors  </li>
+								<ul>
+									<li style="font-size: 22px;">Color Choice</li>
+									<li style="font-size: 22px;">Presentation of Content - https://www.webpagefx.com</li>
+									<li style="font-size: 22px;">Accessibility related maters</li>
+								</ul>
+								<li style="font-size: 26px;">Browser and device compatibility</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<h4>A few tools</h4>
+							<ul>	
+								<li style="font-size: 26px;"><a href="https://tools.pingdom.com">Pingdom.com</a></li>
+								<li style="font-size: 26px;"><a href="http://Hotjar.com">Hotjar.com</a></li>
+								<li style="font-size: 26px;"><a href="https://fivesecondtest.com/">fivesecondtest.com</a></li>
+								<li style="font-size: 26px;"><a href="https://developers.google.com/speed/pagespeed/insights/">Google Page Speed Tool</a></li>
+								<li style="font-size: 26px;"><a href="https://fivesecondtest.com/">fivesecondtest.com</a></li>
+								<li style="font-size: 26px;"><a href="https://www.webpagetest.org/">Webpagetest.org</a></li>
+							<li style="font-size: 26px;"><a href="https://www.browserling.com/">browserling.com</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="images/ux/accessibilitypic.jpg">
+				    <h1>Accessibility</h1>
+				   
+				</section>
+				<section data-background="#eee">
+				   <h3>Introduction to Web Accessibility</h3>
+				   <iframe width="860" height="515" src="https://www.youtube.com/embed/20SHvU2PKsM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Accessibility Principles</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #9AD1D4;"><p><b style="font-size: 30px;">Perceivable</b> <br>People can see the content or hear it </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #80CED7;"><p><b style="font-size: 30px;">Operable</b> <br>people can typing or by voice </p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #007EA7;"><p><b style="font-size: 30px;">Understandable information</b> <br>people get clear and simple language  </p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #003249;"><p><b style="font-size: 30px;">Robust content </b> <br>people can use different assistive technology</p></div>
+					
+					</div>
+					<a href="https://www.w3.org/WAI/fundamentals/accessibility-principles/" style="font-size: .4em;">Click here for more information about accessibility principles</a>
+				</section>
+				<section data-background="images/ux/wireframebg.jpg">
+				    <h1 style="background-color:rgba(0,0,0,0.7);">Wireframing and Prototyping</h1>
+				   
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
+					<q> A wireframe is a two-dimensional illustration of a page’s interface that specifically focuses on space allocation and prioritization of content, functionalities available, and intended behaviors.</q>
+				</section>
+				<section data-background="#fff">
+					<h3>Benefits of wireframing</h3>
+					<div id="flexcontain">
+						<div class="box red" class="fragment" style="font-size: 24px; margin: 10px; background-color: #9CEC5B;"><p><b style="font-size: 30px;">Visualizing</b> <br> Visualize structure and formation of how content will be presented. </p></div>
+						<div class="box blue" class="fragment" style="font-size: 24px; margin: 10px; background-color: #4E6766;"><p><b style="font-size: 30px;">Error Prevention</b> <br> allows you to catch mistakes and issues that can occur</p></div>
+						<div class="box green" class="fragment" style="font-size: 24px; margin: 10px; background-color: #5AB1BB;"><p><b style="font-size: 30px;">Experimenation</b> <br>   allows for trying out more than one layout design.</p></div>
+						<div class="box orange" class="fragment" style="font-size: 24px; margin: 10px; background-color: #A5C882;"><p><b style="font-size: 30px;">Prioritizing</b> <br> determination of how much space to allocate to a given item and where that item is located.</p></div>
+						<div class="box aquamarine" class="fragment" style="font-size: 24px; margin: 10px; background-color: #F7DD72;"><p><b style="font-size: 30px;">IA Clarity</b> <br>  consistent ways for displaying particular types of information on the user interface</p></div>
+						
+					</div>
+					<a href="https://www.usability.gov/how-to-and-tools/methods/wireframing.html" style="font-size: .4em;">Click here for more information about wireframing</a> </a>
+				</section>
+				<section data-background="#fff">
+					<h3>Wireframing Process</h3>
+					<img src="images/ux/wireframes-process.png" width="820" style="box-shadow: none; border: none;"alt="wireframe process"><br>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Wireframing</h3>
+					<p> Low Fidelity  &#10022;  High Fidelity </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;"><b>Low Fidelity</b> - help facilitate project team communication and are relatively quick to develop.  They tend to be more abstract because they often use simple images to block off space and implement mock content, or Latin (lorem ipsum) text as filler for content and labels. </li><br>
+								<li style="font-size: 24px;"><b>Can be a sketch, general outline of box elements (header, logo, footer, columns, navigation), descriptive text</b>  </li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;"><b>High Fidelity</b> - are better for documentation because of their increased level of detail. These wireframes often include information about each particular item on the page, including dimensions, behavior, and/ or actions related to any interactive element.</li>
+								<li style="font-size: 24px;"><b>Detailed, precise measurement, every box element is outlined,   </b> </li>	   
+							</ul>
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/low_fidelity.png" width="650" style="box-shadow: none; margin: 0px; border: none;"alt="low fidelity wireframe"><br>
+					<h5 style="font-size: 20px;">Low Fidelity Example</h5>
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/high_fidelity.png" width="620" style="box-shadow: none; margin: 0px; border: none;"alt="high fidelity wireframe"><br>
+					<h5 style="font-size: 20px;">High Fidelity Example</h5>
+				</section>
+								<section data-background="#fff">
+					<h3>Activity </h3>
+					
+					<div id="flexcontain">
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ol>	
+								<li style="font-size: 30px;">Create a low-fidelity wireframe of <a href="https://www.czs.org/Brookfield-ZOO/Home">Brookfield Zoo</a> homepage using <a href="https://draw.io">draw.io</a></li>
+	   							<li style="font-size: 30px;">Make sure to provide descriptive text for each box element, logo, navigation, header, footer, columns and images.</li>						
+							</ol>
+						</div>
+					</div>
+				</section>
+				<section>
+					<section>
+						<h3>Node Modules</h3>
+						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
+									<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
+									<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+								</ul>
+							</div>
+							<pre>
+								<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+								const welcome = require('./welcome'); //including a module that is a file within your program
+								const http = require('http'); //including a core module example
+								const app = require('express'); //including third-party module example
+
+
+								</code>
+							</pre>
+
+						</div>	
+					</section>
+
+				<section data-background="#fff">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="760" height="315" src="https://www.youtube.com/embed/TNvdgXCqEvM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>Creating your own Module </h3>
+					<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Most Languages</b> - Once an event is triggered to perform a task, most languages wait until the task is complete to move onto the next statement </li><br>
+								<li style="font-size: 26px;"><b>NodeJs</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/multiple_choice_polls/QdwqUEsc6vjDWi3?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>-->
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <ul style="font-size: 28px;">
+						<li>https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS</li>
+						<li>https://css-tricks.com/snippets/css/a-guide-to-flexbox/</li>
+
+
+				    </ul>
+				</section>
+
+
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

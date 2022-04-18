@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Understanding HTML5</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#eee">
+				    <h2>Introduction to HTML</h2>
+				    <img src="images/html/html5.png" alt="html 5 logo">
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+				    <h2>Learning Objectives</h2>
+				    <ul>
+				        <li>Explore the history of the Web and HTML</li>
+                        <li>Discuss World Wide Web Consortium and purpose</li>
+                       
+                        <li>Understanding HTML</li>
+                        <ul>
+                        	<li>Rules and Syntax of HTML</li>
+                        	<li>Categories of HTML5 elements</li>
+                        	<li>Attributes and Hyperlinking to resources</li>
+                        </ul>
+                       
+                        <li>Basic HTML document structure</li>
+                        <ul>
+                        	<li>Doctype | Root tag | Head tags | Body tags</li>
+                        </ul>
+                        <li>Implementing good coding practices and standards</li>
+                       	<ul>
+                       		<li>Validating HTML documents | Commenting and indenting code</li>
+                       	</ul>
+				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h3>History of HTML</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">a <b>network</b> is a structure in which infomation and services are shared among devices known as nodes or hosts</li><br>
+   								<li style="font-size: 28px;">a <b>client-server network</b> allows clients to access information provided by one or more servers. <br> <br> <em style="font-size: .7em">For example, you used a client-side browser to access the html documents of this lecture from a server hosted by amazon somewhere in the world.</em> </li><br>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/html/originalproposal.gif" alt="Tim Berners Original proposal for hypertext markup">
+							<p style="font-size: .5em">picture of Tim Berners proposal concening the management of general information about accelerators and experiments at CERN. It discusses the problems of loss of information about complex evolving systems and derives a solution based on a distributed hypertext system </p>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>History of HTML Cont.</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/html/client_server.png" alt="Clients and Server and Internet exist in middle picture">
+							<p style="font-size: .5em">multiple clients can connect to server(s) - this is what makes up the internet. <br>The largest WAN in existence is the Internet. </p>
+
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">a network confined to a small geographic area, such as within a building or department, is referred to as a <b>local area network</b> or <b>LAN</b></b></li><br>
+	   							<li style="font-size: 28px;">a network that covers a wider area, such as serveral buildings or cities is called a <b>wide area network</b> or <b> WAN</b></b></b></li><br>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#eee">
+					<h2>What does LAN and WAN has to do with the history of HTML?</h2>
+				</section>
+				<section data-background="#fff">
+					<h3>History of HTML</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/Y-q7k-Lf2po?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+							<p style="font-size: .5em">He did not invent the internet, but gave provided context and usability for the Internet.  The fact that the Internet and the World Wide Web are synonymous is many users' minds is a testament to the success of the hypertext approach.</p>
+
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">in 1989, Timonthy Berners-Lee and other researches needed an information system that would make it easy to locate and share data on the CERN network.  <br> <br> The solution: develop a system of <b>hypertext</b> documents.</b></li><br>
+	   							<li style="font-size: 28px;"><b>Hypertext</b> is a method of organization in which data sources are interconnected through a series of links or hyperlinks</li><br>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#eee">
+				    <h2>What does <b>HTML</b> Mean?</h2><br>
+				    <p>A web page is a simple text file written in <b>HTML (Hypertext Markup Language)</b> A <b> markup language</b> is a language that describes the content and structure of a document by "marking up" or tagging, different document elements.</p>
+				</section>
+				<section data-background="#fff">
+				    <h2>HTML Version History</h2>
+				    <img src="images/html/htmlversions.png" alt="HTML versions">
+				</section>
+				<section data-background="../webtools/images/webtool/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">World Wide Web Consortium (W3C)</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Adopted Standards</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">No single organization defined the rules or <b>syntax</b> of HTML, which led to problems as different browser supported different flavors of HTML.</li><br>
+   								<li style="font-size: 24px;">The <b>World Wide Web Consortium(W3C)</b> was born.  The W3C is an international community where Member organizations, a full-time staff, and the public work together to develop Web standards. Led by Web inventor and Director Tim Berners-Lee and CEO Jeffrey Jaffe, W3C's mission is to lead the Web to its full potential.</li><br>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<iframe width="560" height="315" src="https://www.youtube.com/embed/TwpdKxNf-V8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							
+						</div>
+					</div>
+					<aside class="notes">
+						The W3 is an organization international community that develops open standards for the web.  W3 is not governed by on company, but rather a membership of companies that work together to set the standards.  The question is who gives W3 thier standards and the video on slides describes where there authority derives from.  1) Its thier membership base 2) Tim Berners Lee is affliated with W3C and 3) thier proven track record of success.
+					</aside>
+				</section>
+				<section data-background="../webtools/images/webtool/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Understanding HTML</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Rules and Syntax</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/html/elementcompo.PNG" alt="Element composition of the H1 tag.">
+							<p style="font-size: .5em">An HTML tag includes an opening bracket (<), an element name such as h1, and a closing bracket. <br> The end tag has a slash ( / ) preceding the element.</p>
+
+						</div>
+					
+						<ul>	
+							<li style="font-size: 28px;">Web page code is a mixture of the text the user sees in the browser surrounded by a variety of markup elements</li>
+   							<li style="font-size: 28px;">An <b>element</b> is a pair of HTML tags containing content</li>
+
+						</ul>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Void or Empty Elements</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px;">
+							<ul>	
+								<li style="font-size: 22px;">Some HTML elements contain only a single tag. These are known as <b>void elements</b></li>
+   								<li style="font-size: 22px;">Commonly used empty/void elements include:</li>
+   								<ul>
+   									<li style="font-size: 14px;"><xmp><img src="face.jpg" alt="Happy Face" ></xmp></li>
+   									<li style="font-size: 14px;"><xmp><link href="css/style.css" type="text/css" rel="stylesheet" ></xmp></li>
+   									<li style="font-size: 14px;"><xmp><br></xmp></li>
+   									<li style="font-size: 14px;"><xmp><meta charset="UTF-8"></xmp></li>
+   								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/html/voidelements.PNG" alt="Picture of void elements">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Attributes in HTML5</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<pre style="line-height: 2.2em;">
+							<code style="font-size: 22px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;h1 id="honorable"&gt; Those who speak truth  &lt;/h1&gt;
+							</code>
+						</pre>
+						</div>
+						<div id="flexcontain">
+							<div class="box orange" style="font-size: 24px; margin: 10px; width: 265px;"><p>Element attributes provide additional information to the browser about the purpose of the element</p></div>
+							<div class="box yellow" style="font-size: 24px; margin: 10px; width: 265px;"><p>HTML5 has less attributes because of CSS</p></div>
+							<div class="box aquamarine" style="font-size: 24px; margin: 10px; width: 265px;"><p>Most empty or void elements require attributes</p></div>
+						</div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Linking</h3>
+					
+					<img src="images/html/linking.png" alt="Various ways to link to resources image">
+	
+					<pre style="margin-top: -15px;">
+						<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							&lt;a href="fax:1-408-555-5555"&gt;1-408-555-5555&lt;/a&gt;
+							&lt;a href="file:pdf/homework.pdf"&gt;homework.pdf&lt;/a&gt;
+							&lt;a href="ftp://someftpserver.com/"&gt;Browse the FTP server&lt;/a&gt;
+							&lt;a href="geo:44.9727845,-93.2923222"&gt;Map Dunwoody&lt;/a&gt;
+							&lt;a href="https://reacttees.com"&gt;Reactttees.com&lt;/a&gt;
+							&lt;a href="mailto:someone@dunwoody.edu?Subject=HTML"&gt;Send mail&lt;/a&gt;
+						</code>
+					</pre>
+			
+				</section>
+				<section data-background="#fff">
+					<h3>Content Categories</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">Every HTML element is a member of one or more content categories, with group elements that share characteristics.</li><br>
+   								<li style="font-size: 24px;"><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories" target="_blank">MDN web docs documentation on content categories</a></li><br>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/html/content_categories_venn.png" alt="Venn diagram of HTML categories">
+						</div>
+					</div>
+				</section>
+				<section data-background="../webtools/images/webtool/devops.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Basic HTML document structure</h1>
+				</section>
+				<section data-background="#fffde6">
+					<h3>HTML Structure Breakdown</h3>
+					
+					<div id="flexcontain">
+						<img src="images/html/htmlstructure.png" style="height: 580px; margin: auto;" alt="HTML structure context">
+					</div>
+				</section>
+				<!--<section data-background="#fffde6">
+					<h3>Intro. To HTML Part I</h3>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/Fp_6FP9mEtg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+				</section>-->
+				<section data-background="#eee">
+					<h3>The Structure of basic html page</h3>
+					
+					<div id="flexcontain">
+						<pre>
+							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;!DOCTYPE html&gt;
+								&lt;html&gt;
+									&lt;head&gt;
+										<!--The head tag communicates information about the html document -->
+										&lt;title&gt;Basic Structure &lt;/title&gt;
+									&lt;/head&gt;
+									&lt;body&gt;
+										&lt;header&gt;
+										
+										&lt;/header&gt;
+										<!--Typically content that will change from
+										page to page is put in-between header and footer-->
+										&lt;footer&gt;
+										
+										&lt;/footer&gt;
+									&lt;/body&gt;
+								&lt;/html&gt;
+
+
+							</code>
+						</pre>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Structure Continued Using HTML5 elements nested in head</h3>
+					
+					<div id="flexcontain">
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/html/head_tags.png" alt="HTML5 tags nested within head tag">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Structure Continued Using HTML5 elements nested in body</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">The HTML5 elements for page layout include:</li>
+								<ul>
+									<li style="font-size: 20px;"> &lt;header&gt; - Contains the page header content</li>
+									<li style="font-size: 20px;"> &lt;nav&gt; - Contains the navigation elements for the page</li>
+									<li style="font-size: 20px;"> &lt;article&gt; - Contains the primary page content</li>
+									<li style="font-size: 20px;"> &lt;section&gt; - Defines sections or groupings of page content</li>
+									<li style="font-size: 20px;"> &lt;aside&gt; - Contains additional content such as a quote or sidebar</li>
+									<li style="font-size: 20px;"> &lt;figure&gt; - Contains images for the article content</li>
+									<li style="font-size: 20px;"> &lt;footer&gt; - Contains page footer content</li>
+								</ul>
+   								
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/html/html5tags.PNG" alt="HTML5 page layout">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Validating your code</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;">Valid code conforms to W3C rules.</li><br>
+   								<li style="font-size: 24px;">Valid code enhances browser compatibility, accessibility, and exchange of data</li>
+  								<li style="font-size: 24px;">The most common mistakes include:</li>							
+								<ul>
+									<li>No doctype declaration</li>
+							        <li>Missing closing tags</li>
+			                        <li>Missing alt attributes in image elements</li>
+			                        <li>Incorrect tag nesting</li>
+			                        <li>Unquoted attributes</li>
+							    </ul>
+							    <li style="font-size: 24px;"><a href="https://validator.w3.org/">W3C Validation Service Link</a></li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/html/validation.PNG" alt="W3C validation image">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Video Lectures</h3>
+					<div id="flexcontain">
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/XxxNl2DHteY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/iFKbwS_3CZo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/zJcG9H5AfeI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/7hMVfUkICc8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/FFAlgwcSFcE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/rTl3aIKkGHU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+					</div>
+					<a href="https://www.youtube.com/watch?v=XxxNl2DHteY&list=PLvpKGAo_xLN_H5uhRk9jRJLeLVsOGUsAU" style="font-size: .7em;">Click here for playlist</a> </a>
+				</section>
+				<section data-background="#eee">
+				    <h2>Helpful HTML Resources</h2>
+				    <ul>
+				        <li><a href="https://htmlreference.io">htmlreference.io</a> - Good site for understanding how to apply the tag.</li>
+                        <li><a href="https://www.w3schools.com/tags/ref_byfunc.asp"> W3 Schools </a> - HTML element guide.</li>
+						
+				    </ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</body>
+</html>

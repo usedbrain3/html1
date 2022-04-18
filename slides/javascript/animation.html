@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Introduction to Color, Graphics and Typography">
+		<meta name="author" content="C. Fulton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Introduction to Animation and Transitioning</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
+		<script src="https://use.typekit.net/ffm0dmn.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+			    color: #2d4650;
+			}
+			#boxstyle{
+				color: #333;
+			    padding: 1em;
+			    background-color: rgba(255,255, 255, .9);
+			    border-radius: 14px;
+			}
+			#boxstyle2{
+				color: white;
+			    padding: 1em;
+			    background-color: rgba(0,0, 0, .5);
+			    border-radius: 14px;
+			    background-size: 80%;
+			}
+			/* Standard syntax */
+			@keyframes example {
+			    0%   {background-color: red;}
+			    25%  {background-color: yellow;}
+			    50%  {background-color: blue;}
+			    100% {background-color: #B8D8BA;}
+			}
+			
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6{
+				color: #333;
+			}
+			
+			svg {
+			    display: block;
+			    margin: 60px auto;
+			    width: 80%;
+			    max-width: 320px;
+			    cursor: pointer;
+			}
+			#all-items {
+			  opacity: 0;
+			}
+			
+			#multiple_bg{
+				width: 100%;
+				height: 100%;
+				background-image: url(images/cgt/angry_bear.png), url(images/cgt/vikings_crying.png);
+				background-repeat: no-repeat, no-repeat;
+				background-size: 50%, 30%;
+				background-position: top  left, bottom center;
+				display: none;
+			}
+			
+			
+			#responsive_image{
+				width: 200px;
+				
+			}
+			#boxtransform {
+			    width: 100px;
+			    height: 100px;
+			    background: red;
+			    -webkit-transition: width 2s, background-color 6s;  /* For Safari 3.1 to 6.0 */
+			    transition: width 2s, height 4s, background-color 4s, border-radius 5s;
+			}
+			#boxtransform:hover {
+			    width: 600px;
+			    border-radius: 80px;
+			    background-color: purple;
+			    
+			}
+			
+			#transition_activity{
+				margin: auto;
+			    width: 100px;
+			    height: 100px;
+			    background: red;
+			    -webkit-transition: width 4s, height 4s, background-color 4s;  /* For Safari 3.1 to 6.0 */
+			    transition: width 4s, height 4s, background-color 4s, border-radius 4s;
+			}
+			#transition_activity:hover {
+			    width: 300px;
+			    height:300px;
+			    border-radius: 180px;
+			    background-color: green;
+			    
+			}
+			
+			#animation_diff{
+				width: 70%; 
+				padding: 2%; 
+				background-color: green; 
+				margin: auto;
+				transition: all 3s;
+				color: white;
+			}
+			
+			#animation_diff:hover{
+				color: white;
+				background-color: #92B6B1;
+				padding: 4%;
+				transform: rotate(360deg);
+			}
+			
+			@keyframes movingbox {
+			    0%   {top: 0px; left: 0px; }
+			    25%  {top: 0px; left: 500px; }
+			    50%  {top: 300px; left: 300px; }
+			    75%  {top: 300px; left: 0px; }
+			    100% {top: 0px; left: 0px; }
+			}
+			#box_animate {
+				background-image: url(images/animate/spaceship.png);
+			    width: 100px;
+			    height: 100px;
+			    background-size: contain;
+			    position: relative;
+			    -webkit-animation: movingbox 5s infinite; 
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#f2f2f2">
+				    <h3 style="color: #333;">Intro. to Animation and Transitions</h3>
+				    <img src="images/animate/animated_bg.gif" width="420" style="box-shadow: none; border: none;"alt="animated graphic for presentation">
+				    <h3 style="color: #333;">Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#f2f2f2">
+				    <h3>Learning Objectives</h3>
+				    <ul style="font-size: 28px;">
+						<li>Transition</li>
+						<ul>
+							<li>Transition Property break-down</li>
+							<li>Animatatable Properties</li>
+							<li>Creative Solutions</li>
+						</ul>
+						<li>Animation and Keyframes</li>
+				        <ul>
+				        	<li>@Keyframes rule</li>
+				        	<li>Animation Property</li>
+
+							
+						</ul>
+						<li>Animation Libraries</li>
+						<ul>
+							<li>Top Libraries</li>
+							<li>SVG animation/Transition effects</li>
+							
+						</ul>
+
+
+
+				    </ul>
+				</section>
+				<section data-background="images/animate/sun_rotating.gif" style="background-size: 60%;">
+					<h4 id="boxstyle">Why use animation and transition</h4>
+					<aside class="notes">
+						The big question is why use animation?  There are many reasons why people use animation in thier sites,
+						but one use case for adding animation is that subtle animation can help the end-user navigate your site 
+						and guide the end-user attention to certain areas.[Show Example]  Visual appeal is another use-case.  Animation 
+						done well can engage the end-user and even provide some interactivity.  Lets take a look at an example.  An over-use 
+						of animation can distract and even cause end-users to be confused.  
+						
+					 </aside>
+				</section>
+				<section data-background="rgb(231, 231, 207)">
+					<h4>CSS Transitions</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<aside id="boxtransform"></aside>
+						</div>
+						<p style="font-size: 20px; text-align: left;"><b>Transition</b> – is a change of state from an initial state to an end-state.  CSS transitions allows you to change property values smoothly (from one value to another), over a given duration.</p>
+						<p style="font-size: 20px; text-align: left;">transition: all 3s; is the same as transition-property: all;  transition-duration: 3s;</p>
+						<p></p>
+
+					</div>
+
+				</section>
+				<section data-background="rgb(231, 231, 207)">
+					<h4>Animatable Properties</h4>
+					
+					<div id="flexcontain">
+
+						<ul>
+							<li style="font-size: 24px;">width, border-width, right, color, top, opacity, padding, background-color, font-size, line-height, opacity, left, margin, height, bottom</li>
+							<li style="font-size: 24px;">These properties typically have a numeric measurement value with can change in the intermediate state.</li>
+						
+						</ul>
+
+					</div>
+
+				</section>
+				<section data-background="white">
+					<h3>Steps to Implementing CSS Transition</h3>
+					<div id="flexcontain">
+												<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #F9DC24;"><p><b>Step 1</b><br>Select an element you would like to implement a transition</p></div>
+						<div class="box red" style="font-size: 22px; margin: 10px;  background-color: #EB8A44;"><p><b>Step 2</b><br>Define what's going to trigger the transition - pseudo class hover(most common), scroll, click</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #4b7447"><p><b>Step 3</b><br>Select the <b>property/properties</b> you would like to transition</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px;  background-color: #8eb437"><p><b>Step 4</b><br>Give each selected property a <b>transition duration</b></p></div>
+						<div class="box aquamarine" style="font-size: 22px; margin: 10px; background-color: #FF5714;"><p><b>Step 5</b><br>Specify the timing function - specifies the speed curve of the transition effect  </p></div>
+						<div class="box aquamarine" style="font-size: 22px; margin: 10px;"><p><b>Step 6</b><br> Implementing transition delay - how long before transition start</p></div>
+					</div>
+					<!--<a href="https://websitesetup.org/web-safe-fonts-html-css/" style="font-size: .4em;">Link to web safe fonts article</a> -->
+				</section>
+				<section data-background="#fff">
+					<h3>In-Class Activity</h3>
+					
+					<div id="flexcontain">
+						
+						<div id="transition_activity">
+							
+						</div>
+						
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								
+								<p style="font-size: 24px; margin-top: -12px;">Write the code to create the transition to the left.</p>
+								<ul>
+									<li style="font-size: 18px;">The transition duration for each property is 4 seconds </li>
+									<li style="font-size: 18px;">The background color changes from red to green</li>
+									<li style="font-size: 18px;">The the height and width goes from 100 to 300 pixels.</li>
+									<li style="font-size: 18px;">A 180px border-radius is applied to the end-state. </li>
+								</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="images/animate/animated_boat.gif" style="background-size: 60%;">
+					<h1 style="color: white; text-shadow: 2px 2px 10px #333;">Animation</h1>
+					
+				</section>
+				<section data-background="images/animate/animated_boat.gif" style="background-size: 60%;">
+					<h3 style="color: white; text-shadow: 2px 2px 10px #333;">How is Animation different from the Transition Property?</h3>
+					<a href="https://cssanimation.rocks/transition-vs-animation/"><div id="animation_diff">Click here for explanation</div></a>
+				</section>
+				<section data-background="#ffe73b">
+					<h3>@Keyframes rule</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two">
+							<p style="font-size: 20px; text-align: left;">The @keyframes CSS at-rule controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence</p>
+							<pre>
+								<code style="font-size: 12px;" class=""  data-trim contenteditable>
+									@keyframes movingbox {
+									    0%   {top: 0px; left: 0px; background: red;}
+									    25%  {top: 0px; left: 500px; background: blue;}
+									    50%  {top: 500px; left: 500px; background: yellow;}
+									    75%  {top: 500px; left: 0px; background: green;}
+									    100% {top: 0px; left: 0px; background: red;}
+									}
+									div {
+									    width: 100px;
+									    height: 100px;
+									    background: red;
+									    position: relative;
+									    -webkit-animation: movingbox 5s infinite; 
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two">
+							<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #8AEA92;"><p><b>Step 1</b><br>Select an element to animate, define default state.</p></div>
+							<div class="box red" style="font-size: 20px; margin: 10px;  background-color: #80ADA0;"><p><b>Step 2</b><br>Add the @keyframes rule and give name</p></div>
+							<div class="box green" style="font-size: 20px; margin: 10px; background-color: #38618C"><p><b>Step 3</b><br>Define various keyframes</p></div>
+							<div class="box green" style="font-size: 20px; margin: 10px; background-color: #cd0000"><p><b>Step 3</b><br>Add keyframe name and duration to default state using animation property</p></div>
+						</div>
+					</div>
+				
+				</section>
+				<section data-background="images/animate/moving_galaxy.gif" style="background-size: 100%;">
+					<div id="box_animate"></div>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Video Lectures</h3>
+					<div id="flexcontain">
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/BfF9cmaDRdM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/_Sauw0hiTPc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/wW0UeApyYOE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+					</div>
+					<a href="https://www.youtube.com/playlist?list=PLvpKGAo_xLN9QmQG3p1LPMF6pfqGodK91" style="font-size: .7em;">Click here for playlist</a> </a>
+				</section>
+			<!--<section data-background="rgb(231, 231, 207)" style="background-size: 100%;">
+					<h2>Top Animation Libraries</h2>
+					
+				</section>00>
+				<!--<section data-background="rgb(231, 231, 233)">
+					<h4>Responsive Design Example</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/responsive/responsive_ex.PNG" width="720" style="box-shadow: none; border: none;"alt="Responsive example graphic">
+						</div>
+						<p style="font-size: 20px; text-align: left;">The image above shows the responsive design of the World Wildlife Fund web site at five screen resolutions</p>
+						<p style="font-size: 20px; margin-top: -10px; text-align: left;">Both page designs are flexible to adapt to sizes above or below the 768-pixel threshold.  This threshold is called the <b>breakpoint</b>—the point at which design layouts change in responsive design schemes </p>
+
+
+					</div>
+
+				</section>
+				<section data-background="white">
+					<h4>Responsive Design Example</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/responsive/breakpoints.PNG" width="720" style="box-shadow: none; border: none;"alt="Responsive breakpoint example graphic">
+						</div>
+						<p style="font-size: 24px; text-align: left;">The image above shows the range of sizes and the breakpoint used in the style of the World Wildlife site.  The web site design adapts to larger screen sizes, expanding and adding more content and navigation as the browser widths increase</p>
+						<p style="font-size: 24px; margin-top: -10px; text-align: left;">In the example above, the breakpoint is set to 768 pixels </p>
+
+
+					</div>
+
+				</section>
+				
+				<section data-background="rgb(231, 231, 207)">
+					<h3>Responsive Design Process</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 22px; margin: 10px; color: white;  background-color: #50312f"><p>Use CSS style rules to change the order, positioning, and other display characteristics of your page elements</p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; background-color: #cb0000;"><p>Build one basic layout and then use style rules targeted to different screen sizes</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px;  background-color: #fec633;"><p>Choose a breakpoint and then design for the devices above and below that point</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;  background-color: #52af83;"><p>Adapt your design for optimal viewing in each range of screen sizes</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #3F6C45;"><p> Content, not the device needs, should dictate when you choose breakpoints</p></div>
+					</div>
+					
+				</section>
+				<section data-background="images/responsive/breakpoint_d.jpg">
+					<h3 id="boxstyle">How do you set a breakpoint?</h3>
+					<p style="background-color:rgba(0,0,0,0.7); padding: 10px;" class="fragment"> <b>You need a Media Query</b> <br><span style="font-size: .7em;  font-style: italic;">A media query is composed of an optional media type and zero or more expressions that check for the conditions of particular media features. Among the media features that can be used in media queries are ' width ', ' height ', and ' color '.</span></p>
+		
+				</section>
+				<section data-background="white">
+					<h3>Media Queries consist of 3 parts</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 8px; padding-top: 35px; border-radius: 135px; border: 2px solid #333; height: 110px; background-color: white; color: #333; font-weight: 900;"><p>THE MEDIA TYPE</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 8px; padding-top: 35px; border-radius: 135px; border: 2px solid #333; height: 110px; background-color: white; color: #333; font-weight: 900;"><p>THE EXPRESSION(S)</p></div>
+						<div class="box green" style="font-size: 24px; margin: 8px; padding-top: 35px; border-radius: 135px; border: 2px solid #333; height: 110px; background-color: white; color: #333; font-weight: 900;"><p>CONDITIONAL CSS</p></div>
+
+					</div>
+					<img src="images/responsive/definingmobile-mediaquery.jpg" width="620" style="box-shadow: none; border: none;"alt="Media query breakdown ">
+					
+				</section>
+
+				<section data-background="rgb(231, 231, 207)">
+					<h4>Implementing Media Queries</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<p style="font-size: 24px;">You have three options for applying media queries to specify style rules</p>
+							<p style="font-size: 24px;">In the following three examples, the styles are applied if the device screen has a maximum width of 480 pixels</p><br>
+							<ul>	
+								
+								<li style="font-size: 20px;"><b>Linking to an External File</b> – Using the link element or the @import css rule</li>
+								<li style="font-size: 20px;"><b>Implementing into exsisting CSS</b> – Apply them within the style tags or withing external style sheet.</li>
+
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/responsive/responsivediagram.png" width="550" style="box-shadow: none; border: none;"alt="Color Schemes graphic">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="rgb(231, 231, 207)">
+					<h4>Apply Media Query using the Link tag</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<pre>
+							<code style="font-size: 28px; line-height: 32px; height: 100px; word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;link rel="stylesheet" media="screen and
+								(max-width: 480px)” href="mobiledevice.css"&gt;
+
+
+							</code>
+						</pre>
+						</div>
+						<p style="font-size: 24px; text-align: center;">The link element applies an external style sheet named mobiledevice.css if the device screen has a maximum width of 480 pixels</p>
+
+					</div>
+
+				</section>
+				<section data-background="rgb(231, 231, 207)">
+					<h4>Apply Media Query using the @import css rule</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<pre>
+							<code style="font-size: 28px; line-height: 32px; height: 100px; word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
+								@import url("mobiledevice.css") screen and
+								(max-width: 480px);
+
+
+							</code>
+						</pre>
+						</div>
+						<p style="font-size: 24px; text-align: center;">Using an @import rule to apply an external style sheet named mobiledevice.css if the device has a screen with a maximum width of 480 pixels:</p>
+
+					</div>
+
+				</section>
+				<section data-background="rgb(231, 231, 207)">
+					<h4>Apply Media Query within style tag</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<pre>
+							<code style="font-size: 28px; line-height: 32px;   word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
+							&lt;style&gt;
+							@media screen and (max-width: 480px) {
+								#headstruct{
+									background-color: #cd0000;
+								}
+							}
+							&lt;/style&gt;
+
+
+							</code>
+						</pre>
+						</div>
+						<p style="font-size: 24px; text-align: center;">Using the @media rule within a &lt;style&gt; element</p>
+
+					</div>
+
+				</section>
+				<section data-background="rgb(231, 231, 207)">
+					<h4>Multiple Style Rules for Three Breakpoints</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<pre>
+							<code style="font-size: 20px; line-height: 32px; word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
+							/* smaller than 1024 pixels */
+							@media screen and (max-width: 1024px) {
+								#headstruct{
+									background-color: #cd0000;
+								}
+							}
+							/* smaller than 768 pixels */
+							@media screen and (max-width: 768px) {
+								#headstruct{
+									background-color: #eeff22;
+								}
+							}
+							/* smaller than 480 pixels */
+							@media screen and (max-width: 480px) {
+								#headstruct{
+									background-color: #ffee00;
+								}
+							}
+
+
+							</code>
+						</pre>
+						</div>
+					
+
+					</div>
+
+				</section>
+				<section data-background="images/responsive/tomato.jpg">
+					<h3 id="boxstyle" style="color: white; text-shadow: 3px 3px 10px #333; background-color: rgba(255,255,255,.6);">Responsive Images</h3>
+					<p style="background-color:rgba(0,0,0,0.5); padding: 10px;" class="fragment"> something about images</p>
+		
+				</section>
+				<section data-background="#eee">
+					<h4>Working with Images</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+													<pre>
+							<code style="font-size: 20px; line-height: 32px; word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
+								img{
+									max-width: 100%;
+									height: auto;
+									}
+
+							</code>
+						</pre>
+							<p style="font-size: 20px; text-align: center;">By specifying a percentage for your images, it allows the image to fill the space according to the percentage specified.</p>
+							<p style="font-size: 20px; text-align: center;">The CSS object-fit property is used to specify how an &lt;img&gt; or &lt;video&gt; should be resized to fit its container.</p>
+							<a href="https://www.w3schools.com/css/css3_object-fit.asp">Link to W3 schools on object-fit</a>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img id="responsive_image" src="images/responsive/man_staring.jpg" alt="man staring at colors">
+						
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h4>Working with the &lt;picture&gt; element</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+
+							<p style="font-size: 20px; text-align: left;">The &lt;picture&gt; tag gives web developers more flexibility in specifying image resources. <br> <br>  The most common use of the &lt;picture&gt; element will be for art direction in responsive designs. Instead of having one image that is scaled up or down based on the viewport width, multiple images can be designed to more nicely fill the browser viewport.</p>
+	
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<pre>
+							<code style="font-size: 20px; line-height: 32px; word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;picture&gt;
+								  &lt;source media="(min-width: 650px)" srcset="img_pink_flowers.jpg" &gt;
+								  &lt;source media="(min-width: 465px)" srcset="img_white_flower.jpg" &gt;
+								  &lt;img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;" &gt;
+								&lt;/picture&gt;
+
+							</code>
+						</pre>
+						
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h4>The Viewport Meta tag</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+													<pre>
+							<code style="font-size: 20px; line-height: 32px; word-wrap: break-word;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+							</code>
+						</pre>
+							<p style="font-size: 20px; text-align: center;">A meta viewport element gives the browser instructions on how to control the page's dimensions and scaling.</p>
+							<p style="font-size: 20px; text-align: center;">The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).</p>
+							<p style="font-size: 20px; text-align: center;">The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.</p>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img id="responsive_image" src="images/responsive/browser_window.jpg" width="500" alt="browser window image">
+						
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="images/responsive/city_crossing.jpg">
+					<h3 id="boxstyle" style="color: white; text-shadow: 3px 3px 10px #333; background-color: rgba(255,255,255,.6);">Microsoft Future 2020 Vision</h3>
+					<iframe width="660" height="415" src="https://www.youtube.com/embed/ozLaklIFWUI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		
+				</section>
+				<!--<section data-background="white">
+					<h4>Responsive Design Example</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/responsive/breakpoints.PNG" width="720" style="box-shadow: none; border: none;"alt="Responsive breakpoint example graphic">
+						</div>
+						<p style="font-size: 24px; text-align: left;">The image above shows the range of sizes and the breakpoint used in the style of the World Wildlife site.  The web site design adapts to larger screen sizes, expanding and adding more content and navigation as the browser widths increase</p>
+						<p style="font-size: 24px; margin-top: -10px; text-align: left;">In the example above, the breakpoint is set to 768 pixels </p>
+
+
+					</div>
+
+				</section>
+				<section data-background="#fff">
+					<h3>Color Wheel</h3>
+					<img src="images/cgt/color_wheel.jpeg" width="650" style="box-shadow: none; border: none;"alt="Color wheel graphic">
+					
+				</section>
+				<section data-background="#fff">
+					<h4>Color Schemes</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Monochromatic</b> – Different shades and depths of a single color</li>
+								<li style="font-size: 20px;"><b>Analagous /Adjacent</b> – The main color and the colors from either side of it on the color wheel</li>
+								<li style="font-size: 20px;"><b>Complementary</b> – Complementary or opposite colors from the color wheel</li>
+								<li style="font-size: 20px;"><b>Split Complementary</b> – Three colors—the main color and colors from either side of its complement</li>
+								<li style="font-size: 20px;"><b>Triad</b> – Three colors from equidistant points on the color wheel</li>
+								<li style="font-size: 20px;"><b>Tetradic/ Double-Complementary</b> – Four colors— colors from either side of its complement(bi-directional)</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<a href="http://paletton.com"><img src="images/cgt/color_schemes.PNG" width="550" style="box-shadow: none; border: none;"alt="Color Schemes graphic"></a>
+							<p style="font-size: .5em">Click the picture to experiment with color schemes </p>
+						</div>
+
+					</div>
+
+				</section>
+
+				<section data-background="#eee">
+						<h4>Introduction to Color </h4>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/snQp757_Rr0?stop=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h4>Specifying Color</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Color Names</b> – Limited to small range of colors</li>
+								<li style="font-size: 20px;"><b>RGB Color Values</b> – Numerical values that specify the blending of the red, green, and blue color channels</li>
+								<ul>
+									<li>Range: 0-100% (zero color to max color)</li>
+									<li>Also: 0-255 (integer)</li>
+									<li>Ex. P {color: rgb(0, 255, 255);}</li>
+								</ul>
+								<li style="font-size: 20px;"><b>Hexadecimal Color Values</b> – Numerical values that specify the blending of the red, green, and blue color channels</li>
+								<ul>
+									<li>Base 16 number system (0-9, A-F)</li>
+									<li>Range: 00-FF (zero color to max color)</li>
+									<li>Ex. P {color: #00FFFF;}</li>
+								</ul>
+								<li style="font-size: 20px;"><b>HSL Color Values</b> – Numerical values that specify hue, saturation and lightness</li>
+								<ul>
+									<li>The hue value represents a color on the color wheel</li>
+									<li>Saturation and lightness values are percentages</li>
+									<li>Ex. P {color: hsl(120, 100%, 50%);}</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/cgt/hexcode.gif" width="250" style="box-shadow: none; border: none;"alt="hexicode graphic">
+							<iframe width="320" height="300" src="https://www.youtube.com/embed/c56x1aj2CPA?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="images/cgt/gradient_bg.png">
+					<h4>Creating linear and radical gradients</h4>
+					<div id="flexcontain">
+						
+							<pre>
+							<code style="font-size: 16px; background-color: rgba(0,0, 0, 0.6)" class="codebox code-example__codebox"  data-trim contenteditable>
+								/** Style rule for the button below**/
+								#buttton{
+								
+									background-image:linear-gradient(#1B998B, #0a206d); 
+									border-radius: 12px; 
+									height: 85px; 
+									width: 75%; 
+									margin: auto; 
+									color: white; 
+									text-align: center; 
+									padding-top: 40px; 
+									font-size: 1.2em;
+								}
+
+
+							</code>
+						</pre>
+						
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								
+							<a href="https://www.w3schools.com/css/css3_gradients.asp"><div id="button" style="background-image:linear-gradient(#1B998B, #0a206d); border-radius: 12px; height: 85px; width: 75%; margin: auto; color: white; text-align: center; padding-top: 40px; font-size: 1.2em;">Click here to learn more aout linear and radical gradients</div></a>
+						</div>
+					</div>
+					
+				</section>
+				<section data-background="images/cgt/image_format.png">
+					<h3 id="boxstyle">Understanding Graphics</h3>
+					
+				</section>
+				<section data-background="#6e6e6e">
+					<h3>File Formats</h3>
+					
+					<div id="flexcontain">
+						<img src="images/cgt/all_formats.png" width="1200"  style="box-shadow: none; border: none; margin: auto;"alt="file formats graphic">
+					</div>
+				</section>
+				<section data-background="#f9f9f9">
+					<h3>PNG File Format</h3>
+					<div id="flexcontain">
+						<img src="images/cgt/moviepass.png" width="600" style="box-shadow: none; margin: auto; border: none;"alt="Movie pass example of PNG file formats graphic">
+
+					</div>
+					<p style="font-size: .6em;">A royalty-free format that is intended to replace GIF.  Supports transparency and interlacing but not animation.  Ideal for logos or phot cut-outs on your website.</p> 
+				</section>
+				<section data-background="#f9f9f9">
+					<h3>JPG File Format</h3>
+					<div id="flexcontain">
+						<img src="images/cgt/woman_using_phone.jpg" width="400" style="box-shadow: none; margin: auto; border: none;"alt="Woman using phone jpg file formats graphic">
+
+					</div>
+					<p style="font-size: .6em; margin-top: -29px;">Best for photographs or continous tone images; are 24-bit RGB images that allow millions of colors; the higher the compression, the lower the image quality.</p> 
+				</section>
+				<section data-background="white">
+					<h3>GIF File Format</h3>
+					<div id="flexcontain">
+						<img src="images/cgt/giphy.gif"  style="box-shadow: none; margin: auto; border: none; margin-top: -10px;"alt="funny gif file formats graphic">
+
+					</div>
+					<p style="font-size: .6em;">8-bit allowing a palette of no more than 256 colors; GIF lets you store multiple images and timing information about the images in a single file which allows you to create animations</p> 
+					<a href="https://ezgif.com/maker" style="font-size: .6em;">Tool for making gifs</a>
+				</section>
+				<section data-background="white">
+					<h3>SVG File Format</h3>
+					<div id="flexcontain">
+						<svg version="1.1" id="svg-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 354 354" xml:space="preserve"><style type="text/css"> .st0{fill:#63BEDD;} .st1{fill:#A0AFB5;} .st2{fill:#A0AFB5;stroke:#737F84;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;} .st3{fill:#FFFFFF;} .st4{fill:none;stroke:#A0AFB5;stroke-width:2;stroke-miterlimit:10;} .st5{fill:#37A0E5;} .st6{fill:#4AD3AC;} .st7{fill:none;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;} .st8{fill:#FBB03B;} .st9{fill:none;stroke:#F96155;stroke-width:2;stroke-miterlimit:10;} .st10{fill:#F96155;} .st11{fill:#F9F9F9;stroke:#737F84;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;} .st12{fill:#E2E6E8;stroke:#737F84;stroke-width:2;stroke-linejoin:round;stroke-miterlimit:10;} </style><circle id="bg-circle" class="st0" cx="177" cy="177" r="177"/><g id="all-items"><polygon id="envelope-bg" class="st1" points="89 117 91 115 261 115 262 116 264 118 264 236 88 236 88 118 "/><polygon id="envelope-lip" class="st2" points="265 116 176 56 87 116"/><g id="screens"><g id="screen3"><path class="st3" d="M45 270c-2.8 0-5-2.2-5-5V165c0-2.8 2.2-5 5-5h144c2.8 0 5 2.2 5 5v100c0 2.8-2.2 5-5 5H45z"/><path class="st1" d="M189 161c2.2 0 4 1.8 4 4v100c0 2.2-1.8 4-4 4H45c-2.2 0-4-1.8-4-4V165c0-2.2 1.8-4 4-4H189M189 159H45c-3.3 0-6 2.7-6 6v100c0 3.3 2.7 6 6 6h144c3.3 0 6-2.7 6-6V165C195 161.7 192.3 159 189 159L189 159z"/><line class="st4" x1="108" y1="184" x2="171" y2="184"/><line class="st4" x1="108" y1="192" x2="171" y2="192"/><line class="st4" x1="108" y1="200" x2="171" y2="200"/><line class="st4" x1="108" y1="208" x2="171" y2="208"/><line class="st4" x1="108" y1="216" x2="171" y2="216"/><line class="st4" x1="108" y1="224" x2="171" y2="224"/><line class="st4" x1="108" y1="232" x2="171" y2="232"/><line class="st4" x1="108" y1="240" x2="171" y2="240"/><line class="st4" x1="108" y1="248" x2="148" y2="248"/><rect x="61.5" y="182.5" class="st5" width="41" height="43"/><path class="st5" d="M102 183v42H62v-42H102M103 182H61v44h42V182L103 182z"/><polygon class="st3" points="77 197 88 204 77 211 "/></g><g id="screen2"><path class="st3" d="M104 231c-2.8 0-5-2.2-5-5V126c0-2.8 2.2-5 5-5h144c2.8 0 5 2.2 5 5v100c0 2.8-2.2 5-5 5H104z"/><path class="st1" d="M248 122c2.2 0 4 1.8 4 4v100c0 2.2-1.8 4-4 4H104c-2.2 0-4-1.8-4-4V126c0-2.2 1.8-4 4-4H248M248 120H104c-3.3 0-6 2.7-6 6v100c0 3.3 2.7 6 6 6h144c3.3 0 6-2.7 6-6V126C254 122.7 251.3 120 248 120L248 120z"/><rect x="121" y="144" class="st6" width="39" height="41"/><path class="st6" d="M159 145v39h-37v-39H159M161 143h-41v43h41V143L161 143z"/><polyline class="st7" points="117.7 186.2 133.7 170.3 151.2 187.8 "/><polyline class="st7" points="137.2 173.7 147.5 163.4 161.1 176.9 "/><path class="st3" d="M134.6 154.7c2.1 0 3.7 1.7 3.7 3.7s-1.7 3.7-3.7 3.7 -3.7-1.7-3.7-3.7S132.5 154.7 134.6 154.7M134.6 152.7c-3.2 0-5.7 2.6-5.7 5.7s2.6 5.7 5.7 5.7 5.7-2.6 5.7-5.7S137.7 152.7 134.6 152.7L134.6 152.7z"/><rect x="168.5" y="143.5" class="st5" width="63" height="42"/><path class="st5" d="M231 144v41h-62v-41H231M232 143h-64v43h64V143L232 143z"/><polygon class="st3" points="195 158 206 165 195 172 "/><line class="st4" x1="120" y1="194" x2="232" y2="194"/><line class="st4" x1="120" y1="202" x2="232" y2="202"/><line class="st4" x1="120" y1="210" x2="189" y2="210"/></g><g id="screen1"><path class="st3" d="M163 194c-2.8 0-5-2.2-5-5V89c0-2.8 2.2-5 5-5h144c2.8 0 5 2.2 5 5v100c0 2.8-2.2 5-5 5H163z"/><path class="st1" d="M307 85c2.2 0 4 1.8 4 4v100c0 2.2-1.8 4-4 4H163c-2.2 0-4-1.8-4-4V89c0-2.2 1.8-4 4-4H307M307 83H163c-3.3 0-6 2.7-6 6v100c0 3.3 2.7 6 6 6h144c3.3 0 6-2.7 6-6V89C313 85.7 310.3 83 307 83L307 83z"/><g id="screen2sim_1_"><rect x="250.5" y="107.5" class="st8" width="40" height="41"/><path class="st8" d="M290 108v40h-39v-40H290M291 107h-41v42h41V107L291 107z"/></g><path class="st7" d="M279.4 124.6c2 4.5-0.1 9.8-4.7 11.8s-9.8-0.1-11.8-4.7c-2-4.5 0.1-9.8 4.7-11.8C272.2 117.9 277.4 120 279.4 124.6z"/><path class="st3" d="M280 129.7c-0.1 0.6-0.3 1.2-0.5 1.7 1.4 1.1 2.1 2.1 1.9 2.6 -0.3 0.7-1.5 0.9-3.8 0.4 -1.8-0.4-4.3-1.2-7.7-2.5 -3.5-1.4-6-2.8-7.6-4 -1.7-1.3-2.4-2.3-2.1-2.9 0.3-0.5 1.3-0.6 2.8-0.4 0.2-0.5 0.5-1.1 0.9-1.5 -5.2-1.4-9.1-1.7-9.8-0.5 -0.8 1.4 2 4.5 8.5 7.8 2 1 4.2 2.1 6.9 3.1 2.4 0.9 4.5 1.7 6.4 2.4 7.7 2.6 11.1 2.7 11.8 1.1C288.2 135.6 285.2 132.7 280 129.7z"/><line class="st4" x1="181" y1="108" x2="244" y2="108"/><line class="st4" x1="181" y1="116" x2="244" y2="116"/><line class="st4" x1="181" y1="124" x2="244" y2="124"/><line class="st4" x1="181" y1="132" x2="244" y2="132"/><line class="st4" x1="181" y1="140" x2="244" y2="140"/><line class="st4" x1="181" y1="148" x2="220" y2="148"/><line class="st9" x1="181" y1="165" x2="291" y2="165"/><path class="st3" d="M199 170c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5S201.8 170 199 170z"/><path class="st10" d="M199 161c2.2 0 4 1.8 4 4s-1.8 4-4 4 -4-1.8-4-4S196.8 161 199 161M199 159c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6S202.3 159 199 159L199 159z"/></g></g><g id="envelope-fg"><polygon class="st11" points="265 235 87 235 87 117 "/><polygon class="st12" points="265 117 265 235 176 176 "/></g></g></svg>
+
+						
+
+					</div>
+					<p style="font-size: .6em;">A language for describing two-dimensional graphics using XML; SVG graphics are scalable to different resolutions and are printable.</p> 
+					<a href="http://snapsvg.io/" style="font-size: .6em;">Library for incorporating SVG into website</a>
+				</section>
+				<section data-background="images/cgt/images_where.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">Free stock photo resources?</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>PEXELS.COM</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>UNSPLASH.COM</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>BURST.SHOPIFY.COM</p></div>
+
+					</div>
+					<p style="text-shadow: 4px 7px 10px #333;">There are lots of paid sites, but the ones above are my personal go-to sites for stock photos</p> 
+				</section>
+				<section data-background="white">
+					<h3>&lt;img&gt; applicable attributes</h3>
+					<div id="flexcontain">
+						<img src="images/cgt/image_attributes.PNG"  style="box-shadow: none; margin: auto; border: none; margin-top: -10px;"alt="image attributes graphic">
+
+					</div>
+					<p style="font-size: .5em;">The width and height attributes provide important information to the browser by specifying the amount of space to reserve for the image.  This affects the way your pages download to the user, especially at slower connection speeds.</p> 
+					
+				</section>
+				<section data-background="images/cgt/wood.jpeg">
+					<h3 id="boxstyle">Working with Background Images</h3>
+					
+				</section>
+				<section data-background="#eee">
+					<h4>Background Properties</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>background-color</b> – <input type="checkbox" id="bg_color"> - Click the checkbox to change the background-color: #cd0000;</li>
+								<li style="font-size: 20px;"><b>background-image</b> – <input type="checkbox" id="bg_image"> - Click the checkbox to change the background-image: url(images/cgt/chicago_bears_logo.png);</li>
+								<li style="font-size: 20px;"><b>background-repeat-x</b> – <input type="checkbox" id="bg_repeat_x"> - Click the checkbox to change the background-repeat-x: repeat-x;</li>
+								<li style="font-size: 20px;"><b>background-repeat-y</b> – <input type="checkbox" id="bg_repeat_y"> - Click the checkbox to change the background-repeat-y: repeat-y;</li>
+								<li style="font-size: 20px;"><b>background-position</b> – <input type="checkbox" id="bg_position"> - Click the checkbox to change the background-position: center;</li>
+								<li style="font-size: 20px;"><b>background-size</b> – <input type="checkbox" id="bg_size_cover"> - Click the checkbox to change the background-size: cover; (</li>
+								<li style="font-size: 20px;"><b>background-size</b> – <input type="checkbox" id="bg_size_contain"> - Click the checkbox to change the background-size: contain;</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<div id="bgbox" style="border: 6px solid #333; width: 100%; height: 90%; border-radius: 12px;"></div>
+						
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h4>Background Properties Continued</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;">You can specify multiple backgrounds by implementing the style rule below</li>
+								<li style="font-size: 20px;"><b>background-color</b> – <input type="checkbox" id="bg_multiple"> - Click the checkbox to add both backgrounds</li>
+							</ul>
+							<pre>
+								<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									#multiple_bg{
+									
+								  	width: 100%;
+									height: 100%;
+									background-image: url(images/cgt/angry_bear.png), 
+									                  url(images/cgt/vikings_crying.png);
+								    background-repeat: no-repeat, no-repeat;
+					                background-size: 50%, 30%;
+					                background-position: top  left, bottom center;
+					                display: none;
+									}
+							
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<div id="bgbox" style="border: 6px solid #333; width: 100%; height: 90%; border-radius: 12px;">
+								<div id="multiple_bg">
+									
+								</div>
+							</div>
+						
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="images/cgt/font_bg.jpg">
+					<h3 id="boxstyle">Font/Typography</h3>
+				</section>
+				<section data-background="#eee">
+						<h4>Introduction to Typography</h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/sByzHoiYFX0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="white">
+					<h3>Understanding Type Design Principles</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 28px; margin: 10px;  background-color: #898d4a;"><p>Choose fewer fonts and sizes</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; background-color: #284d5f;"><p>Choose available fonts</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; color: black; background-color: #fec633;"><p>Communicate the hierarchy of information with changes in the size, weight, or color of the typeface</p></div>
+						<div class="box orange" style="font-size: 28px; margin: 10px;  background-color: #52af83;"><p>Avoid using text as graphics</p></div>
+						<div class="box aquamarine" style="font-size: 28px; margin: 10px; background-color: #FF5714;"><p> Choose fewer fonts and sizes of type </p></div>
+						<div class="box aquamarine" style="font-size: 22px; margin: 10px; color: black; background-color: #66ee22;"><p> Decide on a font for each different level of topic importance, such as page headings, section headings, and body text </p></div>
+					</div>
+					<a href="https://websitesetup.org/web-safe-fonts-html-css/" style="font-size: .4em;">Link to web safe fonts article</a> 
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/cgt/measurement_units.PNG"  style="box-shadow: none; border: none; margin-top: -20px;"alt="measurement unit graphic"><br>
+					<a href="https://css-tricks.com/the-lengths-of-css/" style="font-size: 16px; margin-top: -60px;">>CSS Tricks Guide to Measurement Units</a>
+				</section>
+				
+
+				<section data-background="#fff">
+					<h3>Activity </h3>
+					
+					<div id="flexcontain">
+	
+						<div class="box_two" style="font-size: 28px; margin: 10px;">
+								
+								<p style="font-size: 26px; ">Break into your groups and discuss the three bullet points below</p>
+								<ul>
+									<li style="font-size: 22px;">Search through websites on the web and select a site your team believes has a well thoughtout color and typography scheme.  Discuss how the site demonstrated their color and font scheme </li>
+									<li style="font-size: 22px;">What's the site color palette and how many fonts are they using within the site and how are they using the fonts?  Are they utilizing hierarchy in thier site? </li>
+									<li style="font-size: 22px;">Discuss how your team website will reflect a color and font strategy </li>
+								</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#eee">
+					<h4>Measurement Values</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 20px;"><b>Using Em</b> – <input type="checkbox" id="bg_color"> - Click the checkbox to change the background-color: #cd0000;</li>
+								<li style="font-size: 20px;"><b>Using Percentage</b> – <input type="checkbox" id="bg_image"> - Click the checkbox to change the background-image: url(images/cgt/chicago_bears_logo.png);</li>
+								<li style="font-size: 20px;"><b>background-repeat-x</b> – <input type="checkbox" id="bg_repeat_x"> - Click the checkbox to change the background-repeat-x: repeat-x;</li>
+								<li style="font-size: 20px;"><b>background-repeat-y</b> – <input type="checkbox" id="bg_repeat_y"> - Click the checkbox to change the background-repeat-y: repeat-y;</li>
+								<li style="font-size: 20px;"><b>background-position</b> – <input type="checkbox" id="bg_position"> - Click the checkbox to change the background-position: center;</li>
+								<li style="font-size: 20px;"><b>background-size</b> – <input type="checkbox" id="bg_size_cover"> - Click the checkbox to change the background-size: cover; (</li>
+								<li style="font-size: 20px;"><b>background-size</b> – <input type="checkbox" id="bg_size_contain"> - Click the checkbox to change the background-size: contain;</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<div id="bgbox" style="border: 6px solid #333; width: 100%; height: 90%; border-radius: 12px;"></div>
+						
+						</div>
+
+					</div>
+
+				</section>
+
+				<section data-background="#eee">
+					<h2>Why User Research?</h2>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>User Research</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #216869;"><p><b style="font-size: 30px;">Observations</b> <br> Give people tasks or instructions and watch them use your design, without help. </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #49A078;"><p><b style="font-size: 30px;">Interviews</b> <br> Ask prospective users questions about their expectations of your design.</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #9CC5A1;"><p><b style="font-size: 30px;">Task Analysis</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;"><p><b style="font-size: 30px;">Focus Groups</b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #333;"><p><b style="font-size: 30px;">Surveys</b> <br>  a structured questionnaire that your target audience completes over the internet generally through a filling out a form</p></div>
+					</div>
+					<a href="https://www.usability.gov/what-and-why/user-research.html" style="font-size: .4em;">Click here for more information about user research</a> </a>
+				</section>
+				<section data-background="#fff">
+					<a href="https://www.nngroup.com/articles/ux-research-cheat-sheet/" style="font-size: 20px;"><h3>Nielsen Norman Group Research</h3></a>
+					<img src="images/ux/frequentuxmethods.png" width="550" style="box-shadow: none; border: none;"alt="Frequent UX method graphic">
+					
+				</section>
+				<section data-background="#eee">
+						<h4>When to use which UX research method</h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/OtUWbsvCujM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/ia_pic.gif" width="800" style="box-shadow: none; border: none;"alt="Information Architecture graphic">
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/louisrosenfeld.gif" width="870" style="box-shadow: none; border: none;"alt="Information Architecture diagram">
+				</section>
+				<section data-background="#fff">
+					<p>Information Architecture and navigation considerations</p>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Information design is the most important factor in the success of your site</li>
+								<li style="font-size: 26px;">What do users want when they get to your site?</li>
+								<li style="font-size: 26px;">Anticipate and plan for user actions</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Do not make users navigate through too many layers of information</li>
+								<li style="font-size: 26px;">Follow the three clicks rule</li>
+								<li style="font-size: 26px;">Use consistent navigation</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+				    <h5>Navigation Considerations - Orient the User</h5>
+				    <p style="font-size: 28px;">Provide enough location information to let the user answer the following navigation questions:</p>
+				    <ul style="text-align: center; list-style-type: none; text-shadow: 1px 1px 5px #333;">
+						<li style="color: #82C09A;">Where am I?</li>
+						<li style="color: #8C001A;">Where can I go?</li>
+						<li style="color: #456990;">How did I get there?</li>
+						<li style="color: #636940;">How do I get back to where I started?</li>
+				
+				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Sample Website Architecture</h3>
+					<img src="images/ux/sitearchdiagram.gif" width="700" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
+				</section>
+				<section data-background="#000">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/6RhFN6cul3w?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="000">
+					<h3>Use Cases</h3>
+					<ul>
+						<li>Describes one specific interaction between the user and the software</li>
+						<li>The use cases are gathered from the clients requirements which defines the scope requirements.</li>
+						<li><a href="https://www.usability.gov/how-to-and-tools/methods/use-cases.html">Usability.gov - Explanation of Use cases</a></li>
+					</ul>
+					
+				</section>
+				<section data-background="000">
+					<h3>Example Use case</h3>
+					<img src="images/ux/use_case.PNG" alt="example of use case"/>
+					
+				</section>
+				<section data-background="#000">
+					<h3>User Personas</h3>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/B23iWg0koi8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					
+				</section>
+				<section data-background="#fff">
+				    <h3>Why Usability?</h3>
+				    <img src="images/ux/ketchup.jpg" width="650" style="box-shadow: none; border: none;"alt="usability ketchup image">
+				    
+				</section>
+				<section data-background="#eee">
+				    <iframe width="560" height="315" src="https://www.youtube.com/embed/lhQOx6OxA0E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Ml92QEqE-RQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+				    <h3>Usability Components</h3>
+				    <img src="images/ux/Usability_Components.png" width="750" style="box-shadow: none; border: none;"alt="usability components">
+				    
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
+					<q> Usability refers to the ease of access and/or use of a product or website.</q>
+				</section>
+				<section data-background="#fff">
+					<h3>Website Usability</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h4>Website usability considerations</h4>
+							<ul>	
+								<li style="font-size: 26px;">Speed, Uptime</li>
+								<li style="font-size: 26px;">Site errors - broken links</li>
+								<li style="font-size: 26px;">Visual Factors  </li>
+								<ul>
+									<li style="font-size: 22px;">Color Choice</li>
+									<li style="font-size: 22px;">Presentation of Content - https://www.webpagefx.com</li>
+									<li style="font-size: 22px;">Accessibility related maters</li>
+								</ul>
+								<li style="font-size: 26px;">Browser and device compatibility</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<h4>A few tools</h4>
+							<ul>	
+								<li style="font-size: 26px;"><a href="https://tools.pingdom.com">Pingdom.com</a></li>
+								<li style="font-size: 26px;"><a href="http://Hotjar.com">Hotjar.com</a></li>
+								<li style="font-size: 26px;"><a href="https://fivesecondtest.com/">fivesecondtest.com</a></li>
+								<li style="font-size: 26px;"><a href="https://developers.google.com/speed/pagespeed/insights/">Google Page Speed Tool</a></li>
+								<li style="font-size: 26px;"><a href="https://fivesecondtest.com/">fivesecondtest.com</a></li>
+								<li style="font-size: 26px;"><a href="https://www.webpagetest.org/">Webpagetest.org</a></li>
+							<li style="font-size: 26px;"><a href="https://www.browserling.com/">browserling.com</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="images/ux/accessibilitypic.jpg">
+				    <h1>Accessibility</h1>
+				   
+				</section>
+				<section data-background="#eee">
+				   <h3>Introduction to Web Accessibility</h3>
+				   <iframe width="860" height="515" src="https://www.youtube.com/embed/20SHvU2PKsM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Accessibility Principles</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #9AD1D4;"><p><b style="font-size: 30px;">Perceivable</b> <br>People can see the content or hear it </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #80CED7;"><p><b style="font-size: 30px;">Operable</b> <br>people can typing or by voice </p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #007EA7;"><p><b style="font-size: 30px;">Understandable information</b> <br>people get clear and simple language  </p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: #003249;"><p><b style="font-size: 30px;">Robust content </b> <br>people can use different assistive technology</p></div>
+					
+					</div>
+					<a href="https://www.w3.org/WAI/fundamentals/accessibility-principles/" style="font-size: .4em;">Click here for more information about accessibility principles</a>
+				</section>
+				<section data-background="images/ux/wireframebg.jpg">
+				    <h1 style="background-color:rgba(0,0,0,0.7);">Wireframing and Prototyping</h1>
+				   
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
+					<q> A wireframe is a two-dimensional illustration of a page’s interface that specifically focuses on space allocation and prioritization of content, functionalities available, and intended behaviors.</q>
+				</section>
+				<section data-background="#fff">
+					<h3>Benefits of wireframing</h3>
+					<div id="flexcontain">
+						<div class="box red" class="fragment" style="font-size: 24px; margin: 10px; background-color: #9CEC5B;"><p><b style="font-size: 30px;">Visualizing</b> <br> Visualize structure and formation of how content will be presented. </p></div>
+						<div class="box blue" class="fragment" style="font-size: 24px; margin: 10px; background-color: #4E6766;"><p><b style="font-size: 30px;">Error Prevention</b> <br> allows you to catch mistakes and issues that can occur</p></div>
+						<div class="box green" class="fragment" style="font-size: 24px; margin: 10px; background-color: #5AB1BB;"><p><b style="font-size: 30px;">Experimenation</b> <br>   allows for trying out more than one layout design.</p></div>
+						<div class="box orange" class="fragment" style="font-size: 24px; margin: 10px; background-color: #A5C882;"><p><b style="font-size: 30px;">Prioritizing</b> <br> determination of how much space to allocate to a given item and where that item is located.</p></div>
+						<div class="box aquamarine" class="fragment" style="font-size: 24px; margin: 10px; background-color: #F7DD72;"><p><b style="font-size: 30px;">IA Clarity</b> <br>  consistent ways for displaying particular types of information on the user interface</p></div>
+						
+					</div>
+					<a href="https://www.usability.gov/how-to-and-tools/methods/wireframing.html" style="font-size: .4em;">Click here for more information about wireframing</a> </a>
+				</section>
+				<section data-background="#fff">
+					<h3>Wireframing Process</h3>
+					<img src="images/ux/wireframes-process.png" width="820" style="box-shadow: none; border: none;"alt="wireframe process"><br>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Wireframing</h3>
+					<p> Low Fidelity  &#10022;  High Fidelity </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;"><b>Low Fidelity</b> - help facilitate project team communication and are relatively quick to develop.  They tend to be more abstract because they often use simple images to block off space and implement mock content, or Latin (lorem ipsum) text as filler for content and labels. </li><br>
+								<li style="font-size: 24px;"><b>Can be a sketch, general outline of box elements (header, logo, footer, columns, navigation), descriptive text</b>  </li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 24px;"><b>High Fidelity</b> - are better for documentation because of their increased level of detail. These wireframes often include information about each particular item on the page, including dimensions, behavior, and/ or actions related to any interactive element.</li>
+								<li style="font-size: 24px;"><b>Detailed, precise measurement, every box element is outlined,   </b> </li>	   
+							</ul>
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/low_fidelity.png" width="650" style="box-shadow: none; margin: 0px; border: none;"alt="low fidelity wireframe"><br>
+					<h5 style="font-size: 20px;">Low Fidelity Example</h5>
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/high_fidelity.png" width="620" style="box-shadow: none; margin: 0px; border: none;"alt="high fidelity wireframe"><br>
+					<h5 style="font-size: 20px;">High Fidelity Example</h5>
+				</section>
+								<section data-background="#fff">
+					<h3>Activity </h3>
+					
+					<div id="flexcontain">
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ol>	
+								<li style="font-size: 30px;">Create a low-fidelity wireframe of <a href="https://www.czs.org/Brookfield-ZOO/Home">Brookfield Zoo</a> homepage using <a href="https://draw.io">draw.io</a></li>
+	   							<li style="font-size: 30px;">Make sure to provide descriptive text for each box element, logo, navigation, header, footer, columns and images.</li>						
+							</ol>
+						</div>
+					</div>
+				</section>
+				<section>
+					<section>
+						<h3>Node Modules</h3>
+						<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+						<div id="flexcontain">
+							<div class="box_two" style="font-size: 22px; margin: 10px;">
+								<ul>
+									<li style="font-size: 26px;"><b>File Module</b> Including the path of file in require method</li>
+									<li style="font-size: 26px;"><b>Core modules</b> are modules that come with NodeJs.  You do not have to install them.  <a href="https://nodejs.org/api/modules.html"> Click here to see a list of core modules</a></li><br>
+									<li style="font-size: 26px;"><b>Third-Party modules</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+								</ul>
+							</div>
+							<pre>
+								<code style="font-size: 16px;" class="hljs" data-trim contenteditable>
+								const welcome = require('./welcome'); //including a module that is a file within your program
+								const http = require('http'); //including a core module example
+								const app = require('express'); //including third-party module example
+
+
+								</code>
+							</pre>
+
+						</div>	
+					</section>
+
+				<section data-background="#fff">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="760" height="315" src="https://www.youtube.com/embed/TNvdgXCqEvM?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>Creating your own Module </h3>
+					<p> Core/Built-in Modules   &#10022;    Third-Party Modules </p>
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;"><b>Most Languages</b> - Once an event is triggered to perform a task, most languages wait until the task is complete to move onto the next statement </li><br>
+								<li style="font-size: 26px;"><b>NodeJs</b> - pushes it to a queue and continues with the next statement. If the server returns something, it callback to whatever triggered the event.</li>	   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/node/eventloop.png" width="500" style="box-shadow: none;" alt="Nodejs event loop queue"/>
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/multiple_choice_polls/QdwqUEsc6vjDWi3?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>-->
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <ul style="font-size: 28px;">
+						<li>https://www.w3schools.com/css/css3_animations.asp</li>
+						<li>https://www.w3schools.com/css/css3_transitions.asp</li>
+						<li>https://css-tricks.com/almanac/properties/t/transition/</li>
+				    </ul>
+				</section>
+
+
+				
+			</div>
+		</div>
+		<script src="js/svg_ex.js"></script>
+		<script src="js/background.js"></script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

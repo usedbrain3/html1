@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Introduction to User Experience">
+		<meta name="author" content="C. Fulton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Introduction to JavaScript </title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+			    color: #2d4650;
+			}
+			#boxstyle{
+				color: #333;
+			    padding: 1em;
+			    background-color: rgba(255,255, 255, .9);
+			    border-radius: 14px;
+			}
+			#boxstyle2{
+				color: white;
+			    padding: 1em;
+			    background-color: rgba(0,0, 0, .5);
+			    border-radius: 14px;
+			    background-size: 80%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="black">
+				    <h3 style="color: white; text-shadow: 2px 2px 10px #333;">Introduction to JavaScript</h3>
+				    <img src="images/js/javascript_home.jpg" width="720" style="box-shadow: none; border: none;"alt="Javascript intro slide image">
+				    <h3 style="color: white; text-shadow: 2px 2px 10px #333;">Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="black">
+				    <h3>Learning Objectives</h3>
+				    <ul style="font-size: 26px;">
+						<li>What is JavaScript</li>
+						<ul>
+							<li>Brief history of JavaScript</li>
+							<li>JS Functionality and Limitations</li>
+							<ul>
+								<li>Client-side vs. Server-Side</li>
+							</ul>
+						</ul>
+						<li>Understanding Client/Server Architecture</li>
+						<ul>
+							<li>Two Tier | Three Tier | Multi Tier [Client tier -  Processing tier - Data Storage tier]</li>
+						
+						</ul>
+				        <li>Incorporating JavaScript</li>
+				        <ul>
+				        	<li>Internal | Inline | External</li>
+							<li>Async | Strict | Defer</li>
+							<li>Commenting - Block Comments | Single Line  </li>
+						</ul>
+						<li>Writing a Program</li>
+				        <ul>
+				        	<li>Writing a command</li>
+							<li>Data Types | Reserved Keywords | Declaring and Initializing Variables | Operators</li>
+
+						</ul>
+						<li>JavaScript Objects</li>
+                       	<ul>
+							<li>Understanding the DOM and Built-in Objects </li>
+							<li>Example calculation program using the getElementsById() and innerHTML from document object </li>
+						</ul>
+						<li>Debugging and Troubleshooting JavaScript</li>
+						<ul>
+							<li>Debugging with Editor | Debugging using Chrome Dev. tools | Commenting out code | Logging to console</li>
+							
+						</ul>
+
+				    </ul>
+				</section>
+				<section data-background="#ffffff">
+					
+						<img src="images/js/context.jpg" alt="html css javascript context graphic">
+				</section>
+
+				<section data-background="#fff">
+					
+					
+					<div id="flexcontain" style="margin-top: -15px;">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/js/js_infographic_one.png" width="280" alt="infographic first part image">
+							<img src="images/js/js_infographic_two.png" width="310" alt="infographic second part image">						
+	
+							
+							<ul>	
+								<li style="font-size: 18px;">JavaScript was created by Brendan Eich in 1995 during his time at Netscape Communications</li>
+								<li style="font-size: 18px;">In 1996 - The language was officially given the name ECMAScript(EMCA - 262) and subsequent versions were released.</li>
+								<li style="font-size: 18px;"><a href="https://auth0.com/blog/a-brief-history-of-javascript/">Article on JS history</a></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#ffffff">
+					<h4>What is JavaScript?</h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/kB32-Cvj0X4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+
+				<section data-background="images/js/js_bg.png">
+					<h2 id="boxstyle">Client-side vs. Server-side</h2>
+				</section>
+				<section data-background="#2e2e2e">
+					
+					<img src="images/js/client-side-vs-server-side.jpg" width="775" style="box-shadow: none; border: none;"alt="Client-side vs. Server-side diagram">
+				</section>
+				<section data-background="#e4e4e4">
+					
+					<h4> Two Tier Architecture </h4>
+					<div id="flexcontain" style="margin-top: -15px;">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/js/two_tier.PNG" width="700" alt="Two Tier image">
+						
+	
+							
+							<p>Requests and responses through which a web browser and web server communicate happen with HTTP</p>
+						</div>
+					</div>
+				</section>
+				<section data-background="#e4e4e4">
+					
+					<h4> Three Tier Architecture </h4>
+					<div id="flexcontain" style="margin-top: -15px;">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/js/three_tier.PNG" width="880" alt="Three Tier image">
+
+						</div>
+					</div>
+				</section>
+				<section data-background="white">
+					<h3>Incorporating JavaScript</h3>
+					<div id="flexcontain">
+						<div class="box " style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #dbdbdb; color: #333; font-weight: 900;"><p>INLINE</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #dbdbdb; color: #333; font-weight: 900;"><p>INTERNAL</p></div>
+						<div class="box green" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #dbdbdb; color: #333; font-weight: 900;"><p>EXTERNAL</p></div>
+
+					</div>
+						<pre>
+							<code style="font-size: 16px;" class="codebox code-example__codebox hljs xml"  data-trim contenteditable>
+								&lt;!DOCTYPE html&gt;
+								&lt;html&gt;
+							        &lt;head&gt;
+										<!--Linking to external js -->
+										&lt;script src="script.js"&gt; &lt;/script&gt;
+									&lt;/head&gt;
+									&lt;body&gt;
+										<!--Inline JS-->
+										&lt;div onclick="window.alert('Triggered by Inline JS')"&gt; Click Me &lt;/div&gt;
+										<!--Internal JS -->
+										&lt;script&gt; 
+											document.getElementsByTagName('div')[0].addEventListener('click', function(){
+										 		document.getElementsByTagName('div')[0].innerHTML ="Triggered by internal JS";
+										 	});
+										 &lt;/script&gt; 
+									&lt;/body&gt;
+								&lt;/html&gt;
+
+
+							</code>
+						</pre>
+					
+				</section>
+				<section data-background="white">
+					<h3>Incorporating JavaScript - Inline</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px; height: 85px; background-color: #cd0000; color: white; font-weight: 900;"><p>INLINE</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #dbdbdb; color: #333; font-weight: 900;"><p>INTERNAL</p></div>
+						<div class="box green" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px; height: 85px; background-color: #dbdbdb; color: #333; font-weight: 900;"><p>EXTERNAL</p></div>
+
+					</div>
+					<img src="images/js/event_attributes.PNG" width="600" alt="event attribute graphic">
+					
+				</section>
+				<section data-background="white">
+					<h4>Incorporating JavaScript - Internal</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #dbdbdb; color: #333; font-weight: 900;"><p>INLINE</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #cd0000; color: white; font-weight: 900;"><p>INTERNAL</p></div>
+						<div class="box green" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #dbdbdb; color: #333; font-weight: 900;"><p>EXTERNAL</p></div>
+
+					</div>
+						<pre>
+							<code style="font-size: 18px;" class="codebox code-example__codebox hljs xml"  data-trim contenteditable>
+
+										<!--Internal JS -->
+										&lt;script&gt; 
+											document.getElementsByTagName('div')[0].addEventListener('click', function(){
+										 		document.getElementsByTagName('div')[0].innerHTML ="Triggered by internal JS";
+										 	});
+										 &lt;/script&gt; 
+							</code>
+						</pre>
+						<ul>
+							<li style="font-size: 24px;">&lt;script&gt; tags can be placed in the body or head. </li>
+							<li style="font-size: 24px;"> Typically placed prior to the closing body tag so that DOM can load</li>
+							<li style="font-size: 24px;"> Multiple &lt;script&gt; tags can be placed in a document.  Tells the browser that the scripting engine must interpret the commands it contains </li>
+						</ul>
+					
+					
+				</section>
+				<section data-background="white">
+					<h4>Incorporating JavaScript - External</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #dbdbdb; color: #333; font-weight: 900;"><p>INLINE</p></div>
+						<div class="box green" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #dbdbdb; color: #333; font-weight: 900;"><p>INTERNAL</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 8px; padding-top: 15px; border-radius: 135px;  height: 85px; background-color: #cd0000; color: white; font-weight: 900;"><p>EXTERNAL</p></div>
+
+
+					</div>
+						<pre>
+							<code style="font-size: 20px;" class="codebox code-example__codebox hljs xml"  data-trim contenteditable>
+										<!--Linking to external js -->
+										&lt;script src="script.js"&gt; &lt;/script&gt;
+							</code>
+						</pre>
+						<ul>
+							<li style="font-size: 24px;"> Uses the &lt;script&gt; tag to link to an external js file.  Must include the src attribute and path to js file.  For example src="script.js". </li>
+							<li style="font-size: 24px;"> You can link to multiple source files.  External linking is for organizing and breaking up js source code.</li>
+							<li style="font-size: 24px;"> The scripting engine sees the referenceds files as one.  </li>
+						</ul>
+					
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Loading the &lt;script&gt; element</h3>
+						<pre>
+							<code style="font-size: 20px;" class="codebox code-example__codebox hljs xml"  data-trim contenteditable>
+										<!--Linking to external js -->
+										&lt;script src="script.js" defer&gt; &lt;/script&gt;
+							</code>
+						</pre>
+						<ul>	
+							<li style="font-size: 22px;"><code>async</code> and <code>defer</code> attributes can be added to script element to modify its sequence of processing</li>
+							<li style="font-size: 22px;"><code>async</code> attribute tells a browser to parse the HTML and JavaScript code together</li>
+							<li style="font-size: 22px;"><code>defer</code> attribute defers script processing until after the page has been completely parsed and loaded</li>
+
+						</ul>
+				
+
+				</section>
+				<section data-background="#fff">
+					<h3>Activity Part A </h3>
+					
+					<div id="flexcontain">
+						
+						<pre>
+							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;!DOCTYPE html&gt;
+								&lt;html&gt;
+							        &lt;head&gt;
+									
+										&lt;title&gt;Incorporating JS - INLINE &lt;/title&gt;
+									&lt;/head&gt;
+									&lt;body&gt;
+											&lt;div onclick="window.alert("Triggered by Inline JS")"&gt; Click Me &lt;/div&gt;
+
+									&lt;/body&gt;
+								&lt;/html&gt;
+
+
+							</code>
+						</pre>
+						
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								
+								<p style="font-size: 24px; margin-top: -12px;">Apply the following bullet points to the HTML code below.</p>
+								<ul>
+									<li style="font-size: 20px;">Copy the code above and implement various event attributes within the div element</li>
+									<li style="font-size: 20px;">Change the output to to say "Hello, JavaScript is easy with practice"</li>
+									<li Style="font-size: 20px;">Using JS target the body element and change the background to #cd0000;</li></li>
+								</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#eee">
+					<h3>Adding Comments in JS</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 30px; margin: 10px; background-color: #353D2F;"><p>Comments help understand the design and purpose of programs</p></div>
+						<div class="box blue" style="font-size: 30px; margin: 10px; background-color: #353D2F;"><p>JavaScript comments can be entered on single or multiple lines</p></div>
+
+					</div>
+					<pre>
+						<code style="font-size: 26px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								// This is example of single line text
+	
+								/* This is an example of a comment block
+								   that can span multiple lines.   
+								   
+	       */
+						</code>
+					</pre>
+				</section>
+				<section data-background="#fff">
+					<h3>Writing a Program</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 22px;">JavaScript is case sensitive </li>
+								<li style="font-size: 22px;">A command indicates an action for a browser to take</li>
+								<li style="font-size: 22px;">A series of commands creates a script</li>
+								<li style="font-size: 22px;">A command should end in a semicolon</li>
+								<li style="font-size: 22px;">There are reserved keywords that cannot be used as variables</li>
+								<ul>
+									<li>The reserved keywords to the right are designated for the JS lauguage.</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<img src="images/js/reserved.PNG" width="700" style="box-shadow: none; border: none;"alt="Reserved keywords image">
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+					<h3>JavaScript Data Types</h3>
+
+
+						<img src="images/js/data_types_graphic.png" width="800" style="box-shadow: none; border: none;"alt="Various Data Types Image">
+
+					
+							<ul>	
+								<li style="font-size: 22px;">JavaScript interpreter automatically determines data type stored in a variable</li>
+								<li style="font-size: 22px;">In JavaScript there are 5 primitive types: undefined , null , boolean , string and number . Everything else is an object. The primitive types boolean, string and number can be wrapped by their object counterparts.</li>
+
+
+							</ul>
+				
+
+				</section>
+				<section data-background="#fff">
+					<h3>JavaScript Data Types</h3>
+
+
+					<img src="images/js/data_types.PNG" width="800" style="box-shadow: none; border: none;"alt="Various Data Types Image">
+
+				</section>
+				<section data-background="rgb(31, 30, 35)">
+					<h3>Declaring and initializing a variable</h3>
+
+
+						<img src="images/js/var_ex.jpg" width="790" style="box-shadow: none; border: none;"alt="Declaring and Initializing a variable graphic">
+
+					
+							<ul>	
+								<li style="font-size: 22px;">The keywords, let, var and const are used to declare a variable</li>
+								<li style="font-size: 22px;"><a href="https://medium.com/podiihq/javascript-variables-should-you-use-let-var-or-const-394f7645c88f">Click here to read more about let, var and const</a></li>
+
+
+							</ul>
+				
+
+				</section>
+				
+				<section data-background="#fff">
+					
+					<h3>Activity Part B </h3>
+					
+					<div id="flexcontain">
+						
+						<pre>
+							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;!DOCTYPE html&gt;
+								&lt;html&gt;
+							        &lt;head&gt;
+										
+										&lt;title&gt;Simple JS program &lt;/title&gt;
+									&lt;/head&gt;
+									&lt;body&gt;
+										<!--Internal script tags-->
+										&lt;script&gt; //JS statements go here &lt;/script&gt;
+									&lt;/body&gt;
+								&lt;/html&gt;
+
+
+							</code>
+						</pre>
+						
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								
+								<p style="font-size: 24px; margin-top: -12px;">Apply the following bullet points to the HTML code below.</p>
+								<ul>
+									<li style="font-size: 18px;">Declare variables for your name, the number credits you are taking next semester and program name.  Place a comments above each statement describing what you are doing. </li>
+									<li style="font-size: 18px;">Output the information using a window.alert() statement.</li>
+
+								</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="images/js/js_objects.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">The DOCUMENT OBJECT</h1>
+				</section>
+				<section data-background="white">
+					<h3>The Document Object Model</h3>
+
+
+						<img src="images/js/js_dom.png" width="620" style="box-shadow: none; border: none;"alt="Graphic of Document Object Model">
+						<p style="font-size: .6em;">With the Document Object Model, programmers can create and build documents, navigate their structure, and add, modify, or delete elements and content.</p>
+				
+
+				</section>
+				<!--<section data-background="images/cgt/images_where.jpg">
+					<h3 style="text-shadow: 4px 7px 10px #333;">Working with Operators</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>PEXELS.COM</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>UNSPLASH.COM</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>BURST.SHOPIFY.COM</p></div>
+
+					</div>
+					<p style="text-shadow: 4px 7px 10px #333;">There are lots of paid sites, but the ones above are my personal go-to sites for stock photos</p> 
+				</section>-->
+				<section data-background="images/js/debugging_bg.jpg">
+					<h3 id="boxstyle"> Code Quality - Debugging Code</h3>
+				</section>
+				<section data-background="images/js/troubleshooting.jpg">
+					<h3>Debugging & Troubleshooting</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 28px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Commenting out Code</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Logging output to Console</p></div>
+						<div class="box green" style="font-size: 28px; margin: 10px; padding-top: 90px; border-radius: 150px; height: 200px; background-color: white; color: #333; font-weight: 900;"><p>Browser and Editor Debugging</p></div>
+
+					</div>
+					<p>The three above techniques can be used in conjunction.</p> 
+				</section>
+				<section data-background="images/js/chrome.jpg">
+					<h3>Debugging in Chrome</h3>
+						<img src="images/js/chrome_debug.PNG" width="950" style="box-shadow: none; border: none;"alt="Declaring and Initializing a variable graphic">
+					<div id="flexcontain">
+						<div class="box " style="font-size: 20px; margin: 10px; height: auto; color: black; background-color: rgba(255,255,255,.8); "><p><b>Step 1</b><br>Render the html document in the browser and inspect elements by pressing "F12" and click on the "Sources" tab and navigate folder structure in left panel.<p></div>
+						<div class="box " style="font-size: 20px; margin: 10px; height: auto; color: black; background-color: rgba(255,255,255,.8);"><p><b>Step 2</b><br>Select JS file you would like to debug and create breakpoint on a line within the middle panel that displays the script.</p></div>
+						<div class="box " style="font-size: 20px; margin: 10px; height: auto; color: black; background-color: rgba(255,255,255,.8);"><p><b>Step 3</b><br>Peform an action that would involk code to run and observe variable assignment.</p></div>
+
+					</div>
+					<aside class="notes">
+						I want to focus on a few techniques that allow us to troubleshoot and debug out code.
+						 - Without using builtin debugging tools you can troubleshoot and debug your code by commenting out your code and using the console.log statement.
+						 - 
+					</aside>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Video Lectures</h3>
+					<div id="flexcontain">
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/m6BlqR9nrrU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/iWbjKcPJYr4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/uwIeAAydc-w" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+					</div>
+					<a href="https://www.youtube.com/playlist?list=PLvpKGAo_xLN9iipO4o_gc-IXkC2lFQXlW" style="font-size: .7em;">Click here for playlist</a> </a>
+				</section>
+				<!--<section data-background="#fff">
+					<h3>Activity C</h3>
+					<a href=""><img src="images/js/tic_tac_toe.png" width="600" alt="Tic Tac Toe Image of website"></a>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 285px; color: #111;"><p><b style="font-size: 28px;">Duplicate project</b> <br> Click on the image above and copy the html and js code to recreate the site on your local machine. <br>1)  Create a file called index1.html and copy all HTML code <br> 2) Create a file called script.js and paste all JS code into file. </p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 285px; color: #111;"><p><b style="font-size: 28px;">Debug and Troubleshoot</b> <br> Render the code in the browser and use inspect tools to check for syntax errors.<br> Observe all syntax errors by checking the console tag in inspect elements.  </p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 285px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Create a method that ask the end user to input a item that needs to be picked up at the grocery store.</p></div>
+
+					</div>
+					
+				
+				</section>-->
+
+
+				<!--<section data-background="#fff">
+					<h2>Traditional Float layout Considerations</h2>
+
+					<img src="images/layout/considerations.PNG" width="350" style="box-shadow: none; border: none;"alt="Dropped columns with floating elements">
+
+					<ul>	
+						<li style="font-size: 22px;">If you are floating an element within another element, the order of the elements is important</li>
+						<li style="font-size: 22px;">Column drops occur when the total width of the columnar elements in a page layout exceeds the width of their containing element</li>
+						<li style="font-size: 22px;">Containers help to format and center box elements.  Use margin auto to your advantage.</li>
+
+					</ul>
+
+				</section>
+
+				<section data-background="#fff">
+					<h4>In-Class Activity </h4>
+					
+					<div id="flexcontain">
+						
+							<pre>
+							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;!DOCTYPE html&gt;
+								&lt;html&gt;
+							        &lt;head&gt;
+									
+										&lt;title&gt;CSS Flexbox &lt;/title&gt;
+									&lt;/head&gt;
+									&lt;body&gt;
+										&lt;aside&gt; #1 &lt;/aside&gt;
+										&lt;aside&gt; #2 &lt;/aside&gt;
+										&lt;aside&gt; #3 &lt;/aside&gt;
+									&lt;/body&gt;
+								&lt;/html&gt;
+
+
+							</code>
+						</pre>
+						
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								
+								<p style="font-size: 22px; margin-top: -12px;">Apply the following bullet points to the HTML code below.</p>
+								<ul>
+									<li style="font-size: 16px;">Add a container to the webpage that has a width of 80% and center everything that displays in the browser. </li>
+									<li style="font-size: 16px;">Apply a 3px solid orangedred border to the container and a 3px solid green border to the immediate children of the container. </li>
+									<li style="font-size: 16px;">Create flex items of all the immediate children of the container.  Each aside box element should have a flex-grow of 1, a flex-shrink of 0 and flex basis of auto and a height of 325px. Apply 10px of margin around each flex item. </li>
+									<li style="font-size: 16px;">Justify the content for each box to space evenly.</li>
+								</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="images/layout/css_grid.jpg">
+					<h1 id="boxstyle2"> CSS Grid</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>CSS Grid Steps</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #32E875; color: #333;"><p><b>Step 1</b><br> Define a container element as a grid with <em>display: grid</em></p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #2E933C;"><p><b>Step 2</b><br> Set the column and row sizes with grid-template-columns and grid-template-rows</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #297045;"><p><b>Step 3</b><br> Place child elements into the grid with grid-column and grid-row</p></div>
+
+					</div>
+					<a href="https://css-tricks.com/snippets/css/complete-guide-grid/" style="font-size: .4em;">Chris Coyier's CSS tricks tutorial on using CSS Grid</a> 
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Defining the Grid</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="css hljs"  data-trim contenteditable>
+									.grid {
+									 display: grid;
+									 grid-template-columns: repeat(4, 1fr);
+									 grid-template-rows: repeat(4, 75px);
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/define_grid.jpg" width="525" style="box-shadow: none; border: none;"alt="Defining CSS Grid">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Defining a Complex Grid</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 display: grid;
+									 grid-template-columns: repeat(4, 1fr);
+									 grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/grid_columns_rows.jpg" width="525" style="box-shadow: none; border: none;"alt="Complex Grid layout">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Positioning items in the Grid using line numbers</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 	display: grid;
+									 	grid-template-columns: repeat(4, 1fr);
+									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									}
+									
+									#item1{
+										grid-column-start: 2;
+										gird-column-end: 4;
+										grid-row-start: 3;
+										grid-row-end: -1;
+										background-color: red;
+									}
+									
+									#item2{
+										grid-column: 3;
+										grid-row: 1;
+										background-color: red;
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/grid_template_lines.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using lines">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Positioning items in the Grid using area names</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 	display: grid;
+									 	grid-template-columns: repeat(4, 1fr);
+									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									 	grid-template-areas: "...." 
+									 					     "...item1" 
+									 					     "item2 item2 item2 item1" 
+									 					     "item2 item2 item2 . ";
+									}
+									
+									#item1{
+										grid-area: item1;
+									}
+									
+									#item2{
+										grid-area: item2;
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/grid_template_areas.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using template areas">
+						</div>
+
+					</div>
+
+				</section>
+				<!--<section data-background="#eee">
+					<h2>Why User Research?</h2>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>User Research</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #216869;"><p><b style="font-size: 30px;">Observations</b> <br> Give people tasks or instructions and watch them use your design, without help. </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #49A078;"><p><b style="font-size: 30px;">Interviews</b> <br> Ask prospective users questions about their expectations of your design.</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #9CC5A1;"><p><b style="font-size: 30px;">Task Analysis</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;"><p><b style="font-size: 30px;">Focus Groups</b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #333;"><p><b style="font-size: 30px;">Surveys</b> <br>  a structured questionnaire that your target audience completes over the internet generally through a filling out a form</p></div>
+					</div>
+					<a href="https://www.usability.gov/what-and-why/user-research.html" style="font-size: .4em;">Click here for more information about user research</a> </a>
+				</section>
+				<section data-background="#fff">
+					<a href="https://www.nngroup.com/articles/ux-research-cheat-sheet/" style="font-size: 20px;"><h3>Nielsen Norman Group Research</h3></a>
+					<img src="images/ux/frequentuxmethods.png" width="550" style="box-shadow: none; border: none;"alt="Frequent UX method graphic">
+					
+				</section>
+				<section data-background="#eee">
+						<h4>When to use which UX research method</h4>
+						<iframe width="760" height="515" src="https://www.youtube.com/embed/OtUWbsvCujM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/ia_pic.gif" width="800" style="box-shadow: none; border: none;"alt="Information Architecture graphic">
+				</section>
+				<section data-background="#fff">
+					
+					<img src="images/ux/louisrosenfeld.gif" width="870" style="box-shadow: none; border: none;"alt="Information Architecture diagram">
+				</section>
+				<section data-background="#fff">
+					<p>Information Architecture and navigation considerations</p>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Information design is the most important factor in the success of your site</li>
+								<li style="font-size: 26px;">What do users want when they get to your site?</li>
+								<li style="font-size: 26px;">Anticipate and plan for user actions</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Do not make users navigate through too many layers of information</li>
+								<li style="font-size: 26px;">Follow the three clicks rule</li>
+								<li style="font-size: 26px;">Use consistent navigation</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+				    <h5>Navigation Considerations - Orient the User</h5>
+				    <p style="font-size: 28px;">Provide enough location information to let the user answer the following navigation questions:</p>
+				    <ul style="text-align: center; list-style-type: none; text-shadow: 1px 1px 5px #333;">
+						<li style="color: #82C09A;">Where am I?</li>
+						<li style="color: #8C001A;">Where can I go?</li>
+						<li style="color: #456990;">How did I get there?</li>
+						<li style="color: #636940;">How do I get back to where I started?</li>
+				
+				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Sample Website Architecture</h3>
+					<img src="images/ux/sitearchdiagram.gif" width="700" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
+				</section>
+				<section data-background="#000">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/6RhFN6cul3w?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="000">
+					<h3>Use Cases</h3>
+					<ul>
+						<li>Describes one specific interaction between the user and the software</li>
+						<li>The use cases are gathered from the clients requirements which defines the scope requirements.</li>
+						<li><a href="https://www.usability.gov/how-to-and-tools/methods/use-cases.html">Usability.gov - Explanation of Use cases</a></li>
+					</ul>
+					
+				</section>
+				<section data-background="000">
+					<h3>Example Use case</h3>
+					<img src="images/ux/use_case.PNG" alt="example of use case"/>
+					
+				</section>
+				<section data-background="#000">
+					<h3>User Personas</h3>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/B23iWg0koi8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					
+				</section>
+				<section data-background="#fff">
+				    <h3>Why Usability?</h3>
+				    <img src="images/ux/ketchup.jpg" width="650" style="box-shadow: none; border: none;"alt="usability ketchup image">
+				    
+				</section>
+				<section data-background="#eee">
+				    <iframe width="560" height="315" src="https://www.youtube.com/embed/lhQOx6OxA0E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Ml92QEqE-RQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+				    <h3>Usability Components</h3>
+				    <img src="images/ux/Usability_Components.png" width="750" style="box-shadow: none; border: none;"alt="usability components">
+				    
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
+					<q> Usability refers to the ease of access and/or use of a product or website.</q>
+				</section>
+
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/multiple_choice_polls/QdwqUEsc6vjDWi3?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>-->
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <ul style="font-size: 28px;">
+						<li>https://code-boxx.com/server-side-vs-client-side-scripts/</li>
+						<li>https://css-tricks.com/snippets/css/a-guide-to-flexbox/</li>
+
+
+				    </ul>
+				</section>
+
+
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

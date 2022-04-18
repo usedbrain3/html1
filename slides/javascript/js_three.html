@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="description" content="Instructor Fulton's Introduction to User Experience">
+		<meta name="author" content="C. Fulton">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Understanding Arrays, Looping, sequence and selection structures</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+		<link rel="stylesheet" href="css/mystyle.css">
+		<link rel="icon" sizes="32x32" type="image/png" href="images/node/favicon.png">
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="css/zenburn.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+			ul li{
+				font-size: 80%;
+			}
+			section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
+			    color: #2d4650;
+			}
+			#boxstyle{
+				color: #333;
+			    padding: 1em;
+			    background-color: rgba(255,255, 255, .9);
+			    border-radius: 14px;
+			}
+			#boxstyle2{
+				color: white;
+			    padding: 1em;
+			    background-color: rgba(0,0, 0, .5);
+			    border-radius: 14px;
+			    background-size: 80%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="#252523">
+				    <h3 style="color: white; text-shadow: 2px 2px 10px #333;">Understanding Arrays, Looping, sequence and selection structures</h3>
+				    <img src="images/js/js_bg_two.jpg" width="720" style="box-shadow: none; border: none;"alt="Javascript structure homepage image">
+				    <h3 style="color: white; text-shadow: 2px 2px 10px #333;">Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#252523">
+				    <h3>Learning Objectives</h3>
+				    <ul style="font-size: 26px;">
+						<li>Arrays</li>
+						<ul>
+							<li>What is an Array | Array Syntax </li>
+							<li>Array Use Case Scenarios</li>
+							<ul>
+								<li>Storing Single dimension data | Storing data in a program | Select Options List </li>
+							</ul>
+							<li>Processing an Array</li>
+							<ul>
+								<li>Array Helper Methods - forEach | map | reduce | filter | every | some</li>
+							</ul>
+							<li>Array Helper Methods</li>
+
+						</ul>
+						<li>Flow Control</li>
+						<ul>
+							<li>Looping/Iteration</li>
+							<ul>
+								<li>while | do/while | for statements  </li>
+							</ul>
+							<li>Decision Making Logic</li>
+							<ul>
+								<li>if statements | if/else statements | switch statements | ternary </li>
+							</ul>
+
+							<li>JavaScript Ayschronous Functionality</li>
+				
+						</ul>
+				        <!--<li>Examining Final Exam Study Guide Site Logic and Flow</li>-->
+
+
+
+				    </ul>
+				</section>
+				<section data-background="images/js/array_bg.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">JS Arrays</h1>
+				</section>
+				<section data-background="#eee">
+					<h3 style="color: black;">What is an Array?</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: white; color: black;"><p><b style="font-weight: 900; ">Definition</b><br>Set of data represented by a single variable name</p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: white; color: black;"><p><b style="font-weight: 900; ">Index</b><br>the position or location within the array</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: white; color: black;"><p><b style="font-weight: 900; ">Element/Value</b><br>the data stored within the position of the array</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px; background-color: white; color: black;"><p><b style="font-weight: 900; ">Array Literal</b><br>most common way to create an array<br>declares a variable and specifies array as content</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: white; color: black;"><p><b style="font-weight: 900; ">Array Object</b><br> the syntax for declaring a new array instance</p></div>
+					</div>
+
+				</section>
+				<section data-background="#131313">
+					<h4>Array Syntax</h4>
+					
+					<div id="flexcontain" style="margin-top: -15px;">
+						
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/js/function_diagram_twob.png" width="620" alt="arrow function example image">
+				
+							<ul>	
+								<li style="font-size: 18px;">Arrow functions allows a short syntax for writing function expressions. You don't need the function keyword, the return keyword, and the curly brackets.</li>
+								<li style="font-size: 18px;">You can only omit the return keyword and the curly brackets if the function is a single statement.</li>
+								<!--<li style="font-size: 18px;"></a></li>-->
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h4>Array Helper Methods</h4>
+					
+					<div id="flexcontain" style="margin-top: -15px;">
+						
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/js/helper_methods_array_diagram.png" width="450" alt="array helper methods">
+				
+							<p>The map, reduce, filter methods allow for a variety of ways to work with the data contained in the list.</p>
+						</div>
+					</div>
+				</section>
+				<section data-background="images/js/array_bg.jpg">
+					<h1 style="color: black; background-color: rgba(255,255,255, .6); padding: 3px;">Control Structures</h1>
+				</section>
+				<section data-background="white">
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/eSYeHlwDCNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>The Three Structures</h3>
+					<p> Sequence   &#10022;    Selection    &#10022;  Looping</p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+					        <ul>
+					        	<li><strong>Sequence</strong></li>
+					        	<ul>
+					        		<li>Perform actions or tasks in order</li>
+					        		<li>No branching or skipping any task</li>
+					        		<li>Input/Output, Calculations, assignment</li>
+					        	</ul>
+					        	<li><strong>Selection</strong></li>
+					        	<ul>
+					        		<li>Ask a question, take one of two actions</li>
+					        		<li>Often called if-then-else</li>
+					        		<li>Dual-alternativeifsor single-alternativeifs</li>
+					        	</ul>
+					        	<li><strong>Looping</strong></li>
+					        	<ul>
+					        		<li>Repeat actions while a condition remains true</li>
+					        	</ul>
+					        </ul>
+						</div>
+	
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Decision Structures</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">if statements &#9924; if/else statements &#9924; switch statements </p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									int numOne = 2; int numTwo = 5;
+									
+									if(numOne >= numTwo){
+									   console.log("2 is greater than 5");
+									}else{
+									   console.log("2 is not greater than 5");
+									}
+	
+								</code>
+							</pre>
+							<p><b>Dual-alternative</b> selection structure</p>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									var numOne = 2; var numTwo = 5;
+									
+									if(numOne <= numTwo){
+								       console.log("5 is greater than 2");
+									}
+	
+								</code>
+							</pre>
+							<p><b>Single-alternative</b> selection structure</p>
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Looping/Iteration</h3>
+					<ul>
+						<li><b>Loop:</b> a structure that repeats actions while some condition continues</li>
+						<ul>
+							<li>As long as a condition(s) remains true, the statements in a while loop’s body execute</li>
+						</ul>
+						<li><b>Use Cases:</b></li>
+						<ul>
+							<li>Validating Data by Defensive Programming | Outputing Structure Data | Reprompting | Repetitive Output(Such as counting, using math, or general text ouput) </li>
+						</ul>
+					</ul>
+		
+				</section>
+				<section data-background="#fff">
+				
+					<h4>Three statements needed for Looping</h4>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p>Initial loop <b>control variable</b> initialized before entering loop</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p>Loop control <b>variable tested</b></p></div>
+						<div class="box green" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p>Body of loop must <b>alter value</b> of loop control variable</p></div>
+						<div class="box yellow" style="font-size: 20px; margin: 10px; background-color: white; color: black;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+										var initialValue = 0;  //Initial Value for Control variable
+										
+										var endValue = 4;
+										
+										var topics = [ "Structures", "Decision Making", "Looping", "Arrays"];
+										
+										while(initialValue < endValue){    //Control variable tested
+										
+									    	console.log("Week " + (initialValue + 1) + " is " + topics[initialValue]);
+									      
+									    	initialValue++; //Control Variable altered
+									       
+										}
+										
+										console.log("Finished");
+									 
+									 
+	
+								</code>
+							</pre>
+						</div>
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Activity 6</h3>
+					<img src="../logic/images/structures/calendar_days.jpg" width="490" alt="2014 calendar graphic">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 26px;">Step 1</b> <br> Observe the diagram above and declare for the data you will use in program.  Declare an array that holds the month names.</p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 26px;">Step 2</b> <br>Think through and apply the correct structures to fulfill the requirements of the program.</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 26px;">Step 3</b> <br>Code the program and output the month along with the correct number of days for each month.</p></div>
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Video Lectures</h3>
+					<div id="flexcontain">
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/8-etSdUDTK8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"><iframe width="360" height="215" src="https://www.youtube.com/embed/rXsZVwPtKEU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+						<div class="box"></div>
+					</div>
+					<a href="https://www.youtube.com/playlist?list=PLvpKGAo_xLN9iipO4o_gc-IXkC2lFQXlW" style="font-size: .7em;">Click here for playlist</a> </a>
+				</section>
+
+
+
+				<!--<section data-background="#fff">
+					<h2>Traditional Float layout Considerations</h2>
+
+					<img src="images/layout/considerations.PNG" width="350" style="box-shadow: none; border: none;"alt="Dropped columns with floating elements">
+
+					<ul>	
+						<li style="font-size: 22px;">If you are floating an element within another element, the order of the elements is important</li>
+						<li style="font-size: 22px;">Column drops occur when the total width of the columnar elements in a page layout exceeds the width of their containing element</li>
+						<li style="font-size: 22px;">Containers help to format and center box elements.  Use margin auto to your advantage.</li>
+
+					</ul>
+
+				</section>
+				<section data-background="images/layout/comp_bg.jpg">
+					<h1 id="boxstyle2"> CSS Flexbox</h1>
+				</section>
+
+				<section data-background="#fff">
+					<h4>In-Class Activity </h4>
+					
+					<div id="flexcontain">
+						
+							<pre>
+							<code style="font-size: 16px;" class="codebox code-example__codebox"  data-trim contenteditable>
+								&lt;!DOCTYPE html&gt;
+								&lt;html&gt;
+							        &lt;head&gt;
+									
+										&lt;title&gt;CSS Flexbox &lt;/title&gt;
+									&lt;/head&gt;
+									&lt;body&gt;
+										&lt;aside&gt; #1 &lt;/aside&gt;
+										&lt;aside&gt; #2 &lt;/aside&gt;
+										&lt;aside&gt; #3 &lt;/aside&gt;
+									&lt;/body&gt;
+								&lt;/html&gt;
+
+
+							</code>
+						</pre>
+						
+
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+								
+								<p style="font-size: 22px; margin-top: -12px;">Apply the following bullet points to the HTML code below.</p>
+								<ul>
+									<li style="font-size: 16px;">Add a container to the webpage that has a width of 80% and center everything that displays in the browser. </li>
+									<li style="font-size: 16px;">Apply a 3px solid orangedred border to the container and a 3px solid green border to the immediate children of the container. </li>
+									<li style="font-size: 16px;">Create flex items of all the immediate children of the container.  Each aside box element should have a flex-grow of 1, a flex-shrink of 0 and flex basis of auto and a height of 325px. Apply 10px of margin around each flex item. </li>
+									<li style="font-size: 16px;">Justify the content for each box to space evenly.</li>
+								</ul>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="#f1f1f1">
+					<h4>Defining the Grid</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="css hljs"  data-trim contenteditable>
+									.grid {
+									 display: grid;
+									 grid-template-columns: repeat(4, 1fr);
+									 grid-template-rows: repeat(4, 75px);
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/define_grid.jpg" width="525" style="box-shadow: none; border: none;"alt="Defining CSS Grid">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Defining a Complex Grid</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 display: grid;
+									 grid-template-columns: repeat(4, 1fr);
+									 grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/grid_columns_rows.jpg" width="525" style="box-shadow: none; border: none;"alt="Complex Grid layout">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Positioning items in the Grid using line numbers</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 	display: grid;
+									 	grid-template-columns: repeat(4, 1fr);
+									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									}
+									
+									#item1{
+										grid-column-start: 2;
+										gird-column-end: 4;
+										grid-row-start: 3;
+										grid-row-end: -1;
+										background-color: red;
+									}
+									
+									#item2{
+										grid-column: 3;
+										grid-row: 1;
+										background-color: red;
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/grid_template_lines.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using lines">
+						</div>
+
+					</div>
+
+				</section>
+				<section data-background="#f1f1f1">
+					<h4>Positioning items in the Grid using area names</h4>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<pre>
+								<code style="font-size: 18px; line-height: 1em;" class="codebox code-example__codebox"  data-trim contenteditable>
+									.grid {
+									 	display: grid;
+									 	grid-template-columns: repeat(4, 1fr);
+									 	grid-template-rows: 40px 2fr repeat(2, minmax(75px, 1fr));
+									 	grid-template-areas: "...." 
+									 					     "...item1" 
+									 					     "item2 item2 item2 item1" 
+									 					     "item2 item2 item2 . ";
+									}
+									
+									#item1{
+										grid-area: item1;
+									}
+									
+									#item2{
+										grid-area: item2;
+									}
+	
+	
+								</code>
+							</pre>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/layout/grid_template_areas.jpg" width="525" style="box-shadow: none; border: none;"alt="Position in Grid using template areas">
+						</div>
+
+					</div>
+
+				</section>
+				<!--<section data-background="#eee">
+					<h2>Why User Research?</h2>
+					
+				</section>
+				<section data-background="#fff">
+					<h3>User Research</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 24px; margin: 10px; background-color: #216869;"><p><b style="font-size: 30px;">Observations</b> <br> Give people tasks or instructions and watch them use your design, without help. </p></div>
+						<div class="box blue" style="font-size: 24px; margin: 10px; background-color: #49A078;"><p><b style="font-size: 30px;">Interviews</b> <br> Ask prospective users questions about their expectations of your design.</p></div>
+						<div class="box green" style="font-size: 24px; margin: 10px; background-color: #9CC5A1;"><p><b style="font-size: 30px;">Task Analysis</b> <br>   learning about user goals, and understand the tasks users will perform on your site.</p></div>
+						<div class="box orange" style="font-size: 24px; margin: 10px;"><p><b style="font-size: 30px;">Focus Groups</b> <br> a moderated discussion where you can learn about users’ attitudes, beliefs, desires, and reactions to concepts.</p></div>
+						<div class="box aquamarine" style="font-size: 24px; margin: 10px; background-color: #333;"><p><b style="font-size: 30px;">Surveys</b> <br>  a structured questionnaire that your target audience completes over the internet generally through a filling out a form</p></div>
+					</div>
+					<a href="https://www.usability.gov/what-and-why/user-research.html" style="font-size: .4em;">Click here for more information about user research</a> </a>
+				</section>
+
+				<section data-background="#fff">
+					<p>Information Architecture and navigation considerations</p>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Information design is the most important factor in the success of your site</li>
+								<li style="font-size: 26px;">What do users want when they get to your site?</li>
+								<li style="font-size: 26px;">Anticipate and plan for user actions</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 26px;">Do not make users navigate through too many layers of information</li>
+								<li style="font-size: 26px;">Follow the three clicks rule</li>
+								<li style="font-size: 26px;">Use consistent navigation</li>
+								<li style="font-size: 26px;">Provide direct links to your most popular pages</li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+				<section data-background="#eee">
+				    <h5>Navigation Considerations - Orient the User</h5>
+				    <p style="font-size: 28px;">Provide enough location information to let the user answer the following navigation questions:</p>
+				    <ul style="text-align: center; list-style-type: none; text-shadow: 1px 1px 5px #333;">
+						<li style="color: #82C09A;">Where am I?</li>
+						<li style="color: #8C001A;">Where can I go?</li>
+						<li style="color: #456990;">How did I get there?</li>
+						<li style="color: #636940;">How do I get back to where I started?</li>
+				
+				    </ul>
+				</section>
+				<section data-background="#fff">
+					<h3>Sample Website Architecture</h3>
+					<img src="images/ux/sitearchdiagram.gif" width="700" style="box-shadow: none; border: none;"alt="Sample Website Architecture Diagram">
+				</section>
+				<section data-background="#000">
+					<h3>Understanding Card Sorting</h3>
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/6RhFN6cul3w?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</section>
+				<section data-background="000">
+					<h3>Use Cases</h3>
+					<ul>
+						<li>Describes one specific interaction between the user and the software</li>
+						<li>The use cases are gathered from the clients requirements which defines the scope requirements.</li>
+						<li><a href="https://www.usability.gov/how-to-and-tools/methods/use-cases.html">Usability.gov - Explanation of Use cases</a></li>
+					</ul>
+					
+				</section>
+				<section data-background="000">
+					<h3>Example Use case</h3>
+					<img src="images/ux/use_case.PNG" alt="example of use case"/>
+					
+				</section>
+				<section data-background="#000">
+					<h3>User Personas</h3>
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/B23iWg0koi8?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					
+				</section>
+				<section data-background="#fff">
+				    <h3>Why Usability?</h3>
+				    <img src="images/ux/ketchup.jpg" width="650" style="box-shadow: none; border: none;"alt="usability ketchup image">
+				    
+				</section>
+				<section data-background="#eee">
+				    <iframe width="560" height="315" src="https://www.youtube.com/embed/lhQOx6OxA0E?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/Ml92QEqE-RQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				
+				</section>
+				<section data-background="#fff">
+				    <h3>Usability Components</h3>
+				    <img src="images/ux/Usability_Components.png" width="750" style="box-shadow: none; border: none;"alt="usability components">
+				    
+				</section>
+				<section data-background="#fff">
+					<img src="images/ux/uxdesign.PNG" width="820" style="box-shadow: none; border: none;"alt="ux design stages"><br>
+					<q> Usability refers to the ease of access and/or use of a product or website.</q>
+				</section>
+				<section data-background="#fff">
+					<h3>Website Usability</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<h4>Website usability considerations</h4>
+							<ul>	
+								<li style="font-size: 26px;">Speed, Uptime</li>
+								<li style="font-size: 26px;">Site errors - broken links</li>
+								<li style="font-size: 26px;">Visual Factors  </li>
+								<ul>
+									<li style="font-size: 22px;">Color Choice</li>
+									<li style="font-size: 22px;">Presentation of Content - https://www.webpagefx.com</li>
+									<li style="font-size: 22px;">Accessibility related maters</li>
+								</ul>
+								<li style="font-size: 26px;">Browser and device compatibility</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+						<h4>A few tools</h4>
+							<ul>	
+								<li style="font-size: 26px;"><a href="https://tools.pingdom.com">Pingdom.com</a></li>
+								<li style="font-size: 26px;"><a href="http://Hotjar.com">Hotjar.com</a></li>
+								<li style="font-size: 26px;"><a href="https://fivesecondtest.com/">fivesecondtest.com</a></li>
+								<li style="font-size: 26px;"><a href="https://developers.google.com/speed/pagespeed/insights/">Google Page Speed Tool</a></li>
+								<li style="font-size: 26px;"><a href="https://fivesecondtest.com/">fivesecondtest.com</a></li>
+								<li style="font-size: 26px;"><a href="https://www.webpagetest.org/">Webpagetest.org</a></li>
+							<li style="font-size: 26px;"><a href="https://www.browserling.com/">browserling.com</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</section>
+
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/multiple_choice_polls/QdwqUEsc6vjDWi3?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>
+				<section data-background-color="#fff">
+					<iframe height="600" src="https://embed.polleverywhere.com/free_text_polls/njYHOn4wxYZfpDV?controls=none&short_poll=true" width="100%" height="100%" frameBorder="0"></iframe>
+				</section>-->
+				<section data-background="#eee">
+				    <h2>References</h2>
+				    <ul style="font-size: 28px;">
+						<li>https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS</li>
+					
+
+
+				    </ul>
+				</section>
+
+
+				
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>

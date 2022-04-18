@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>React - Component-Based Interface Development</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/dope.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/gruvbox-dark.min.css">
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700,900" rel="stylesheet">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-background="images/component/react_bg.jpg">
+				    <h2>Introduction to React</h2>
+				    <!--<img src="images/component/react_logo.png" width="600" alt="react logo">-->
+				    <h3>Instructor: Chris Fulton</h3>
+				</section>
+				<section data-background="#eee">
+				    <h3>Learning Objectives</h3>
+				    <ul style="font-size: 28px;">
+						<li>What is React</li>
+						<ul>
+							<li>Definition</li>
+							<li>Use Cases and understanding component frameworks </li>
+							<li><strong>Adding React</strong> - CDN and Package manager</li>
+							<li><strong>Components</strong> - Function and Class Components</li>
+						</ul>
+						<li>Syntax, Structure and Rules of React</li>
+						<ul>
+							<li>Understanding JSX</li>
+							<li>JSX Rules and Considerations</li>
+							<ul>
+								<li>Attributes | Expressions | Nested Elements | CSS Style | Comments </li>
+
+							</ul>
+						</ul>
+				        <li>React Lifecycle</li>
+				        <ul>
+							<li><strong>Mounting</strong> - constructor() | getDerivedStateFromProps() | render() | componentDidMount() </li>
+							<li><strong>Updating</strong> - getDerivedStateFromProps() | shouldComponentUpdate() | render() | getSnapshotBeforeUpdate() | componentDidUpdate() </li>
+							<li><strong>UnMounting</strong> - componentWillUnmount()</li>
+
+						</ul>
+						<li>React Functionality</li>
+				        <ul>
+							<li>React Features - Props and State | React Hooks | Routing</li>
+							<li>Handling Events</li>
+							<li>Forms </li>
+						</ul>
+
+
+				    </ul>
+				</section>
+
+				<section data-background="white">
+					<h3>Component-based Development</h3>
+					<p style="font-size: .7em;">Component-based software engineering (CBSE), also called components-based development (CBD), is a branch of software engineering that emphasizes the <strong>separation of concerns</strong> with respect to the wide-ranging functionality available throughout a given software system. It is a <strong>reuse-based approach</strong> to defining, implementing and composing loosely coupled independent components into systems.</p>
+				</section>
+				<section data-background="#fff">
+					<h3 style="color: black;">Implementing React</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Using Content Delivery Network </p>
+			
+						
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									
+									  &lt;script src="https://unpkg.com/react@16/umd/react.production.min.js"&gt;&lt;/script&gt;
+									  &lt;script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"&gt;&lt;/script&gt;
+									  &lt;script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">&lt;/script&gt;
+									
+								</code>
+							</pre>
+					<p style="font-size: 28px; margin-bottom: -12px;">Using React Environment </p>
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+				
+									/**Create a scaffolded react application that will be contained in project
+									* folder react_ex
+									**/
+									npx create-react-app react_ex
+	
+								</code>
+							</pre>
+							
+						
+				
+				</section>
+				<section data-background="#fff">
+					<h3 style="color: black;">CDN React Example</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Single page application with one component </p>
+		
+					<pre style="box-shadow: none;">
+						<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+
+							  
+						&lt;!DOCTYPE html&gt;
+						&lt;html&gt;
+							&lt;head&gt;
+							  &lt;script src="https://unpkg.com/react@16/umd/react.production.min.js"&gt;&lt;/script&gt;
+							  &lt;script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"&gt;&lt;/script&gt;
+							  &lt;script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js">&lt;/script&gt;
+							&lt;/head&gt;
+							&lt;body&gt;
+							  
+								&lt;div id="mydiv"&gt;&lt;/div&gt;
+								
+								&lt;script type="text/babel"&gt;
+									class Hello extends React.Component {
+									  render() {
+									    return &lt;h1&gt;Hello World!&lt;/h1&gt;
+									  }
+									}
+								
+									ReactDOM.render(&lt;Hello /&gt;, document.getElementById('mydiv'))
+								&lt;/script&gt;
+							
+							&lt;/body&gt;
+						&lt;/html&gt;
+							
+						</code>
+					</pre>
+
+				</section>
+				<section data-background="#fff">
+					<h3 style="color: black;">React Environment</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Single page application components </p>
+		
+					<pre style="box-shadow: none;">
+						<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							 /**Create a new folder and run the command below to create a scaffolded react app**/
+							 npm install -g create-react-app
+							 
+							 /**Run command to create a react app called example_react_app**/
+							 npx create-react-app example_react_app
+							 
+							 /**Navigate into the example_react_app by running the command below**/
+							 cd example_react_app
+							 
+							 /**Run the command below to start the server**/
+							 npm start
+							
+						</code>
+					</pre>
+					<p style="font-size: 28px; margin-bottom: -12px;"><a href="https://create-react-app.dev/">Helpful Documentation</a></p>
+				</section>
+				<section data-background="images/component/react_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">What is React?</h1>
+				</section>
+				<section data-background="#eee">
+					<h3>Defining React</h3>
+					<p style="font-size: .7em;">React was created by Facebook, it is an open-source JavaScript library for building user interfaces. It is used to <b>create components</b>, <b>handle state and props</b>, <b>utilize event listeners</b> and certain life cycle methods to update data as it changes.</p>
+					
+					
+					<img src="images/component/react_reuse.jpeg" width="700" alt="component reuse">
+		
+				</section>
+				<section data-background="#fff">
+					<h3>Understanding React</h3>
+					
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 395px; color: #111;"><p><b style="font-size: 26px;">Components</b> <br> are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and returns HTML via a render function. Components come in two types, <strong>Class components</strong> and <strong>Function components</strong>.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 395px; color: #111;"><p><b style="font-size: 26px;">Props and State</b> <br>Props are arguments passed into React components. Props are passed to components via HTML attributes. <br> <strong>State</strong><br> React components have a built-in state object.  The state object is where you store property values that belongs to the component.  When the state object changes, the component re-renders.</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 395px; color: #111;"><p><b style="font-size: 26px;">Event Listeners</b> <br>React can perform actions based on user events.  React has the same events as HTML: click, change, mouseover etc.</p></div>
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Components</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Class Component  &#9924; Function Component </p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									import React, { Component } from "react";
+									
+									class Welcome extends Component {
+									   state = {};
+									   render() {
+									      return &lt;div&gt; Hello {this.props.name}&lt;/div&gt;;
+									   }
+									}
+									
+									export default Welcome;
+								</code>
+							</pre>
+						
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									function Car() {
+									  return &lt;h2&gt;Hi, I am also a Car!&lt;/h2&gt;;
+									}
+	
+								</code>
+							</pre>
+							
+						</div>
+					</div>
+				</section>
+				<section data-background="images/component/react_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">JSX <br> (JavaScript XML)</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>What is JSX?</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">JSX is a syntax that gets compiled into valid JavaScript 	&#9733;  JSX converts HTML tags into react elements  &#9733; You do not have to use JSX, but it's easier to use JSX with React.</p>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							function formatName(user) {
+							  return user.firstName + ' ' + user.lastName;
+							}
+							
+							const user = {
+							  firstName: 'Silas',
+							  lastName: 'Alexander'
+							};
+							
+							const element = (
+							
+							  &lt;h1&gt;
+							    Hello, {formatName(user)}!
+							  &lt;/h1&gt;
+							);
+							
+							ReactDOM.render(element, document.getElementById('root'));
+
+						</code>
+					</pre>
+				</section>
+				<section data-background="#fff">
+					<h3>Understanding JSX</h3>
+									<pre style="box-shadow: none;">
+						<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							var tested = true;
+							var innerText = 'Offers';
+							var offerReactNode = &lt;div id=""
+							                      data-test={tested?'test':'false'} 
+							                      className="blue" 
+							                      aria-test="test">
+							                          {innerText} 
+							                   &lt;/div&gt;;
+							
+							ReactDOM.render(offerReactNode, document.getElementById('offers'));
+
+						</code>
+					</pre>
+					<div id="flexcontain">
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 24px;">Attributes</b> <br>When we want to add custom attribute, we need to use data- prefix. &#9733; Whenever using the class attribute, we need to use className instead. </p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 24px;">Expressions</b> <br>JavaScript expressions can be used inside of JSX. We just need to wrap it with curly brackets {}.</p></div>
+
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Understanding JSX</h3>
+									<pre style="box-shadow: none;">
+						<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							var styles = {backgroundColor:'#cd0000'};
+							var innerText = 'Suggestions';
+							var suggestionReactNode = ( &lt;div id=""
+							                      style={styles}>
+							                      	&lt;h1&gt;
+							                          {innerText} 
+							                        &lt;/h1&gt;
+							                        {//Line Comment}
+							                        {/*Block Comment...*/}
+							                   &lt;/div&gt;;)
+							
+							ReactDOM.render(suggestionReactNode, document.getElementById('suggest'));
+
+						</code>
+					</pre>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 24px;">Nested Elements</b> <br> &#9733; If we want to return more elements, we need to wrap it with one container element <br> &#9733; To write JSX on multiple lines, wrap in parentheses </div>	
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111;"><p><b style="font-size: 24px;">CSS Style</b> <br> &#9733; React recommends using inline styles.<br> &#9733; To set inline CSS properties, we need to use camelCase syntax. </div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; color: #111;"><p><b style="font-size: 24px;">Comments</b> <br>When writing comments, we need to put curly brackets {} when we want to write comment within children section of a tag. </p></div>
+
+					</div>
+
+				</section>
+
+				<section data-background="#fff">
+					<h3>Activity/Lab 3</h3>
+				
+					<img src="images/component/profile_components.PNG" width="520" style="float: right;"  alt="MPLS Profile page components">
+					
+					<div id="flexcontain" style="width: 420px;">
+						<div class="box red" style="font-size: 20px; margin: 10px; height: 175px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Create a React environment (refer to previous slides) | Navigate to this <a href="https://github.com/instructorc/CWEB1000_1010Spring2020/tree/cweb1130/mpls_renters">github repository</a> and copy the img folder and profile.html code into environment file.  </div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; height: 175px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Create three  [offers, suggestions, task] class components</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; height: 175px; background-color: #eee; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Add JSX components to page</p></div>
+
+					</div>
+
+				</section>
+				<section data-background="images/component/react_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">React Lifecycle</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Lifecycle Stagest</h3>
+					
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 410px; color: #111;"><p><b style="font-size: 26px;">Mounting</b> <br>  the process of outputting the virtual representation of a component into the final UI (e.g. DOM or Native Components). In a browser that would mean outputting a React Element into an actual DOM element. <br> <b>Methods Include</b>-  constructor() | getDerivedStateFromProps() | render() | componentDidMount()</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 410px; color: #111;"><p><b style="font-size: 26px;">Updating</b> <br>A component is updated whenever there is a change in the component's state or props.  <br> <b>Methods include</b> - getDerivedStateFromProps() | shouldComponentUpdate() | render() | getSnapshotBeforeUpdate() | componentDidUpdate()</p></div>
+						<div class="box green" style="font-size: 20px; margin: 10px; background-color: #eee; height: 410px; color: #111;"><p><b style="font-size: 26px;">UnMounting</b> <br>is when a component is removed from the DOM. <br> <b>Methods include </b> - componentWillUnmount()</p></div>
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>React Lifecycle Stages Visual</h3>
+					<p style="font-size: .7em;">These methods are used to control the behavior of a component </p>
+					
+					
+					<img src="images/component/react_lifecycle_stages_graphic.png"  alt="react lifecycle stages visual">
+		
+				</section>
+				<section data-background="#fff">
+					<h3>Example of Mount methods</h3>
+					<pre style="box-shadow: none; margin-bottom: -20px;">
+						<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
+							const App extends React.Component {
+							  constructor(props) {
+							   super(props) 
+							    this.state = {
+							       points: 0
+							    }  
+							    this.handlePoints = this.handlePoints.bind(this) 
+							    }   
+							    
+							  render() {
+							    return (
+							      &lt;div className="App"&gt;
+							        &lt;header className="App-header"&gt;
+							          &lt;img src={logo} className="App-logo" alt="logo" /&gt;
+							          &lt;p&gt;
+							            You've scored {this.state.points} points.
+							          &lt;/p&gt;
+							        &lt;/header&gt;
+							      &lt;/div&gt;
+							    );
+							}
+
+						</code>
+					</pre>
+					<div id="flexcontain" style="margin-top: -30px;">
+						<div class="box blue" style="font-size: 12px; margin: 10px; background-color: #eee; height: 120px; color: #111;"><p><b style="font-size: 18px;">Constructor</b> <br>The constructor can be used to bind event handlers to the component and/or initializing the local state of the component.</p></div>
+						<div class="box green" style="font-size: 12px; margin: 10px; background-color: #eee; height: 120px; color: #111;"><p><b style="font-size: 18px;">Render</b> <br>This function takes two arguments, HTML code and an HTML element.  The purpose of the function is to display the specified HTML code inside the specified HTML element</p></div>
+					</div>
+					
+				
+				</section>
+				<section data-background="images/component/react_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">React Functionality</h1>
+				</section>
+
+				<section data-background="#fff">
+					<h3>Props</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">“Props” is a special keyword in React, which stands for properties and is being used for <strong>passing data from one component to another</strong>. But the important part here is that data with props are being passed in a <strong>uni-directional flow</strong></p>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
+						class Car extends React.Component {
+						  render() {
+						    return &lt;Garage brand ="Mazda" /&gt;;
+						  }
+						}
+						
+						class Garage extends React.Component {
+						  render() {
+						    return (
+						      &lt;div&gt;
+						      	&lt;h1&gt;Who lives in my garage?&lt;/h1&gt;
+						      	&lt;h2&gt; I am a {this.props.brand}! &lt;/h2&gt;
+						      &lt;/div&gt;
+						    );
+						  }
+						}
+						ReactDOM.render(&lt;Car /&gt;, document.getElementById('root'));
+
+						</code>
+					</pre>
+				</section>
+				<section data-background="#fff">
+					<h4>Question 1</h4>
+
+					<p>What's used to pass data to a component from outside?</p>
+					<ul>
+						<li>A. render with arguments</li>
+						<li>B. setState</li>
+						<li>C. props</li>
+						<li>D. state</li>
+						<li>E. None of the options presented</li>
+					
+					</ul>
+				</section>
+				<section data-background="#fff">
+					<h4>Question 2</h4>
+
+					<p>What is state in React?</p>
+					<ul>
+						<li>A. A router</li>
+						<li>B. A component</li>
+						<li>C. An internal data store (object) of a component.</li>
+						<li>D. a database</li>
+						<li>E. None of the options presented</li>
+					
+					</ul>
+				</section>
+				<section data-background="#fff">
+					<h3>React Routing</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">React Routing allows you to render the various views of the components you have within a <strong>single-page</strong> React Application.  The url file path triggers which component will be displayed, and the UI remains static while components dynamically render in the browser.</p>
+					<pre style="box-shadow: none;">
+						<code style="font-size: 10px;" class="codebox code-example__codebox"  data-trim contenteditable>
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
+import App from './App'
+import Users from './users'
+import Contact from './contact'
+import Notfound from './notfound'
+const routing = (
+   &lt;Router&gt;
+     &lt;div&gt;
+       &lt;ul&gt;
+         &lt;li&gt;
+          &lt;Link to="/"&gt;Home&lt;/Link&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;Link to="/users"&gt;Users&lt;/Link&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+          &lt;Link to="/contact"&gt;Contact&lt;/Link&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;Switch&gt;
+        &lt;Route exact path="/" component={App} /&gt;
+        &lt;Route path="/users" component={Users} /&gt;
+        &lt;Route path="/contact" component={Contact} /&gt;
+        &lt;Route component={Notfound} /&gt;
+      &lt;/Switch&gt;
+    &lt;/div&gt;
+  &lt;/Router&gt;
+)
+ReactDOM.render(routing, document.getElementById('root'))
+
+						</code>
+					</pre>
+				</section>
+				<section data-background="#fff">
+					<h3>React Hooks</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class. <a href="https://reactjs.org/docs/hooks-intro.html">Click here</a> for documentation.</p>
+					<!--<pre style="box-shadow: none;">
+						<code style="font-size: 12px;" class="codebox code-example__codebox"  data-trim contenteditable>
+						class Car extends React.Component {
+						  render() {
+						    return &lt;h2&gt;I am a {this.props.brand}!&lt;/h2&gt;;
+						  }
+						}
+						
+						class Garage extends React.Component {
+						  render() {
+						    return (
+						      &lt;div&gt;
+						      &lt;h1&gt;Who lives in my garage?&lt;/h1&gt;
+						      &lt;Car brand="Ford" /&gt;
+						      &lt;/div&gt;
+						    );
+						  }
+						}
+						ReactDOM.render(&lt;Garage /&gt;, document.getElementById('root'));
+
+						</code>
+					</pre>-->
+				</section>
+				<!--<section data-background="#fff">
+					<h3>Props and State</h3>
+				
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									import React, { Component } from "react";
+									
+									class Welcome extends Component {
+									   state = {};
+									   render() {
+									      return &lt;div&gt; Hello {this.props.name}&lt;/div&gt;;
+									   }
+									}
+									
+									export default Welcome;
+								</code>
+							</pre>
+							<p><b>Content Delivery Network</b> selection structure</p>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 14px;" class="codebox code-example__codebox"  data-trim contenteditable>
+									int numOne = 2; int numTwo = 5;
+									
+									if(numOne <= numTwo){
+								       Console.WriteLine("5 is greater than 2");
+									}
+	
+								</code>
+							</pre>
+							<p><b>Node Package Manager</b> selection structure</p>
+						</div>
+					</div>
+				</section>
+
+				<section data-background="images/structures/multi_bg.jpg">
+					<h1 style="color: black; background-color: #ffffffe0; padding: 3px;">Multi-dimensional Arrays</h1>
+				</section>
+				<section data-background="#fff">
+					<h3 style="color: white; background-color: rgb(106, 136, 50);">Two-dimensional array</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Contains two dimensions: <b>height</b> and <b>width</b>.  The location of an element within the array depends on two factors.</p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+						<ul style="font-size: .7em;">	
+							<li><b>Examples: </b></li>
+							<ul>
+								<li>Apartment building with five floors</li>
+								<li>Each floor has studio apartments and one-and two-bedroom apartments</li>
+								<li>– To determine a tenant’s rent, you need to know two pieces of information:</li>
+								<ul>
+									<li>The floor</li>
+									<li>The number of bedrooms in the apartment</li>
+								</ul>
+								<li>c# syntax: <br> <code> int[ , ] RENT_BY_FLOOR_AND_BDRMS = new int [5,3];</code></li>
+							</ul>
+						</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/multi_apartment_one.png" width="330" alt="Multi-dimensional array example one">
+							<img src="images/structures/multi_apartment_two.png" width="330" alt="Multi-dimensional array example two">
+						</div>
+					</div>
+				</section>
+				<!--<section data-background="#fff">
+					<h3>Methods with Parameters</h3>
+				
+					<img src="images/methods/methods_withparams.PNG" style="float: right;" width="400" alt="Diagram of program with parameters">
+					
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">With Parameters</b> <br> When you call a method from a program, you must know three things:<br> 1) Name of the called method <br> 2) Type of info. to sent to the method,if any <br> 3) Type of return data to expect from method, if any </p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;"></b> <br><b>Arguement to the method</b> - pass a data item into a method from a calling program<br><b>Parameter to the method</b> - method receives the data item<br> <code> computeTax(202.01, .10) //Called <br> computeTax(double amount, double rate) //Defined</code></p></div>
+
+					</div>
+
+				</section>
+				<section data-background="white">
+					<iframe width="760" height="515" src="https://www.youtube.com/embed/eSYeHlwDCNA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</section>
+				<section data-background="#fff">
+					<h3>Sequence</h3>
+					<p style="font-size: 24px;"> Input/Output   &#10022;    Calculation  &#10022;  Declaring/Initializing Variables</p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul>	
+								<li><b>Do</b> one process</li><br>
+								<li><b>Do</b> two process</li>	
+								<li><b>Do</b> three process</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/structures/Sequence.PNG" alt="picture of absolute versus relative file structure">
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Selection (Dual Alternative)</h3>
+					<p style="font-size: 28px;"> Dual Alternatives  &#10022;    Single Alternatives  </p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul>	
+								<li><b>Decison Making Time</b> - the juncture in your program where you go right or left</li><br>
+							</ul>
+							<code style="font-size: 28px;">
+								<b>IF</b> some condition is true <b>THEN</b><br>
+								<b>DO</b> one process
+								<b>ELSE</b><br>
+								<b>DO</b> the other process<br>
+								<b>ENDIF</b>
+							</code>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/Selection.PNG" alt="">
+						</div>
+					</div>
+
+					
+				</section>
+				
+				<section data-background="#fff">
+					<h3>Selection (Single Alternative)</h3>
+					<p style="font-size: 28px;"> Dual Alternatives  &#10022;    Single Alternatives  </p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul>	
+								<li><b>Single Alternative IF's</b> - An elseclause is not required</li><br>
+							</ul>
+							<code style="font-size: 28px;">
+								<b>IF</b> employee belongs to dentalPlan <b>THEN</b><br>
+								<b>DO</b> deduct $40 from employeeGrossPay
+								<b>ENDIF</b>
+							</code>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/single_alternative.PNG" alt="">
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Looping Structure </h3>
+					<p style="font-size: 28px;"> Iterations  &#10022;    Repetition  </p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul>	
+								<li><b>Do something repetitively</b> - Do this until I tell you to stop</li>
+								<li>Good for counting and iterating through list</li>
+							</ul>
+							<code style="font-size: 24px;">
+								<p><b>IF</b> some condition is true <b>THEN</b></p>
+								&nbsp;&nbsp;<p><b>DO</b> one process</p>
+								<p><b>ELSE</b></p>
+								&nbsp;&nbsp;<p><b>DO</b> the other process</p>
+								<p><b>ENDIF</b></p>
+							</code>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/looping.PNG" alt="">
+						</div>
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>A Few Considerations</h3>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">One Entry Point</b> <br> Every Structure should have one entry point and one exit point.</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">No Crossed Lines</b> <br>Lines should never cross each other</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Continous Flow</b> <br>There should be a continuous flow to the program that makes logical sense.</p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Stacking Structures</b> <br>Attaching structures end-to-end</p></div>
+						<div class="box orange" style="font-size: 22px; margin: 10px; background-color: #2d4650;"><p><b style="font-size: 28px;">Nesting Structures</b> <br>Placing one structure within another</p></div>
+					</div>
+				
+				</section>
+				<section data-background="white">
+					<h2>A basic example</h2>
+					<img src="images/structures/allstructures.PNG" width="575" style="box-shadow: none;" alt="structures set up properly example"/>
+				</section>
+
+				
+				<section data-background="#fff">
+					<h3>In-Class Activity 1</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Recreate the program below using Flowgorithm </p>
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<img src="images/structures/flow_chart_structure.png" height="535" alt="Structured Flow Chart">
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/pseudocode_structure.png" alt="structured pseudocode ">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>In-Class Activity 2</h3>
+					<p style="font-size: 28px; margin-bottom: -12px;">Design a flowchart and write pseudocode for a program that accepts three numbers from a user and displays a message if sum is greated than 10. </p>
+		
+				</section>
+
+				<section data-background="#fff" style="width:105%; margin-left: -34px;">
+					<h3>Using <span style="color: #1586be;">OR</span> Logic</h3>
+				
+					<div id="flexcontain">
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/or_logic.png" width="600" alt="or logic diagram">
+						</div>
+						<div class="box_two" style="margin: 10px;">
+							<ul>	
+								<li><b>Relational comparison operators</b></li>
+								<ul>
+									<li>Six types supported by all modern programming languages</li>
+									<li>Two values compared can be either variables or constants</li>
+								</ul>
+								<li><b>Any decision can be made with only three types of comparisons: =, >, and </b></li>
+								<!--<li><b>"Not equal" operator <></b></li>
+								<ul>
+									<li>Involves thinking in double negatives</li>
+									<li>Best to restrict usage to “if without an else”—that is, only take action when some comparison is false</li>
+								</ul>
+							</ul>
+
+						</div>
+
+					</div>
+
+					
+				</section>
+				<section data-background="#fff">
+					<h3>Using <span style="color: #1586be;">OR</span> Logic</h3>
+					<img src="images/structures/truth_table_two.PNG" width="700" alt="OR comparison operator truth table diagram">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 28px;">Compound Condition</b> <br> Asks multiple questions before an outcome is determined</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 28px;">OR decision</b> <br>Take action when one or the other of two conditions is true <br><br> Example - “Are you free for dinner Friday or Saturday?”</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #2d4650; height: 295px;"><p><b style="font-size: 28px;">Conditional OR operator</b> <br>Ask two or more questions in a single comparison. <br><br> Only one Boolean expression in an OR selection must be true to produce a result of true</p></div>
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>In-Class Activity 3</h3>
+					<p style="font-size: 22px; margin-bottom: -2px;">Complete the following activity using the diagram below</p>
+					<img src="images/structures/activity_three_1.png" width="550" alt="activity three">
+					<img src="images/structures/activity_three_2.png" style="margin-top: -10px;" width="550" alt="activity three cropping">
+				</section>
+				<section data-background="images/structures/range_bg.jpg">
+					<h1 style="color: white; background-color: rgba(0,0,0, .6); padding: 3px;">Selections within Range</h1>
+				</section>
+				<section data-background="#fff">
+				
+					<p><b>Range Check</b> - Compare a variable to a series of values between limits</p>
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Use the lowest or highest value in each range</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Adjust the question logic when using highest versus lowest values</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; height: 235px; background-color: #2d4650;"><p>Consider if end points of the range should be included <br><br> Yes: use >=or <= <br><br> No: use < or ></p></div>
+						<div class="box yellow" style="font-size: 22px; margin: 10px; background-color: #ffffff;">
+							<pre style="box-shadow: none;">
+								<code style="font-size: 18px;" class="codebox code-example__codebox"  data-trim contenteditable>
+										int LOWER_DRIVER_AGE = 16, UPPER_DRIVER_AGE = 120, age = 22; 
+										
+										
+										if(age >= LOWER_DRIVER_AGE && age <= UPPER_DRIVER_AGE){
+										
+									      Console.WriteLine("Able to rent car for Harvey Car Rental");
+									       
+										}else{
+										
+										  Console.WriteLine("Not able to rent car from Harvey Car Rental");
+										}
+									 
+									 
+	
+								</code>
+							</pre>
+						</div>
+
+					</div>
+				
+				</section>
+
+				<section data-background="#fff">
+					<h3>Common Errors When Using Range Checks</h3>
+					<ul>
+						<li>Avoid a <b>dead</b> or <b>unreachable path</b>.</li>
+						<ul>
+							<li>Don't check for values that can never occur</li>
+							<li>Requires some prior knowledge of the data</li>
+						</ul>
+						<li>Never ask a question if there is only one possible outcome</li>
+						<li>Avoid asking a question when the logic has already determined the outcome</li>
+						<li>Avoid testing the same range limit multiple times</li>
+					</ul>
+		
+				</section>
+				<section data-background="#fff">
+					<h3>In-Class Activity 4</h3>
+					<p style="font-size: 28px;">MetLife Insurance company wants several lists of salesperson data. Design the flowchart and write pseudocode for the following:</p>
+					<ol>
+						<li style="font-size: 20px;">A program that accepts one salesperson’s <b>ID number</b> and <b>number of polices sold</b> in the last month, and displays the data only if the salesperson is a high performer –a person who sells more than 25 policies in the month.</li>
+						<li style="font-size: 20px;">A program that accepts salesperson data <b>continuously</b> until a sentinel value is entered and displays a list of high performers.</li>
+						<li style="font-size: 20px;">A program that accepts salesperson data <b>continuously</b> until a sentinel value is entered and displays a list of salespeople who sold <b>between 5 and 10 policies</b> in the month.</li>
+					</ol>
+				</section>
+				<section data-background="images/structures/looping_bg.jpg">
+					<h1 style="color: #111111;  padding: 3px;">Looping Structure</h1>
+				</section>
+				<section data-background="#fff">
+					<h3>Looping/Iteration</h3>
+					<ul>
+						<li><b>Loop:</b> a structure that repeats actions while some condition continues</li>
+						<ul>
+							<li>As long as a condition(s) remains true, the statements in a while loop’s body execute</li>
+						</ul>
+						<li><b>Use Cases:</b></li>
+						<ul>
+							<li>Validating Data by Defensive Programming | Outputing Structure Data | Reprompting | Repetitive Output(Such as counting, using math, or general text ouput) </li>
+						</ul>
+					</ul>
+					<img src="images/structures/fox-loop.jpg" alt="looping comic graphic">
+		
+				</section>
+
+				<section data-background="#fff">
+					<h3>Definite Loop with Counter</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul>
+								<li><b>Definite Loop</b> - Executes a predetermined number of times</li>
+								<li><b>Counter-controlled Loop</b> - Program counts loop repetitions</li>
+								<li>Loop control variables altered by:</li>
+								<ul>
+									<li>Incrementing</li>
+									<li>Decrementing</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/loop_control.png" width="500" alt="Definite loop with counter diagram">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Loop with Sentinel Value</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 34px;">
+
+								<li><b>Indefinite Loop</b></li>
+								<ul>
+									<li>Performed a different number of times each time the program executes</li>
+									<li>The user decides how many times the loop executes</li>
+								</ul>
+								<li><b>Three steps should occur in every properly functioning loop</b></li>
+								<ul>
+									<li style="background-color: #ffe600;">Provide a starting value for the variable that will control the loop</li>
+									<li style="background-color: #26e600;">Test the loop control variable to determine whether the loop body executes</li>
+									<li style="background-color: #44c8f5;">Alter the loop control variable</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/loop_sentinel.png" width="500" alt="Loop with sentinel value diagram">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Activity 5</h3>
+					<img src="images/structures/fibonacci-sequence.jpg" width="500" alt="fibonacci sequence diagram">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Look up the formula for the fibonacci sequence and do research on this mathematical phenomenon</p></div>
+						<div class="box blue" style="font-size: 20px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Think through and apply the correct structures to fulfill the requirements of the sequence.</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; background-color: #eee; height: 225px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Code the program in C#</p></div>
+
+					</div>
+					
+				
+				</section>
+
+				<section data-background="#fff">
+				
+					<h4>Nested Loops Structure</h4>
+					<div id="flexcontain">
+						<div class="box yellow" style="font-size: 22px; margin: 10px; min-width: 650px; background-color: #ffffff;">
+						
+							<img src="images/structures/GridviewinGridview.gif"   alt="nested Loops practical example in gridview">
+						</div>
+						<div class="box red" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p><b>Nested Loop </b><br>loops within loops</p></div>
+						<div class="box blue" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p><b>Outer Loop </b><br>the loop that contains the other loop</b></p></div>
+						<div class="box green" style="font-size: 28px; margin: 10px; height: 235px; background-color: #ddd; color: #111;"><p><b>Inner Loop</b><br> the loop that is contained</p></div>
+
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+				
+					<h4>Example of Two nested Loops</h4>
+
+					<pre style="box-shadow: none;">
+						<code style="font-size: 16px; min-height: 100%;" class="codebox code-example__codebox"  data-trim contenteditable>
+string [] days = {"Mon.", "Tue", "Wed.", "Thur", "Fri"};
+string [] meals = {"Breakfast", "Lunch", "Dinner"};
+string [] breakfastItems = {"OJ","Toast", "Banana"};
+string [] lunchItems = {"Juice","Pizza", "Pear"};
+string [] dinnerItems = {"Hi-C","Ribs", "Apple"};
+int firstIterator = 0, secondIterator = 0, thirdIterator = 0;
+
+Console.WriteLine("Weekly Menu \n");
+while(firstIterator < 5){
+	Console.WriteLine(days[firstIterator]);
+	secondIterator = 0;
+	while(secondIterator < 3){
+		Console.WriteLine("   " + meals[secondIterator]);
+		thirdIterator = 0;
+		while(thirdIterator < 3){
+			if(secondIterator == 0){
+				Console.WriteLine("       " + breakfastItems[thirdIterator]);
+			}else if(secondIterator == 1){
+				Console.WriteLine("       " + lunchItems[thirdIterator]);
+			}else{
+				Console.WriteLine("       " + dinnerItems[thirdIterator]);
+			}
+			thirdIterator++;
+			
+		}//End of inner most loop
+		secondIterator++;
+	}//end of second inner loop
+	firstIterator++;
+}//End of first loop
+
+Console.WriteLine("Weekly Menu has been outputted");
+
+						</code>
+					</pre>
+
+				
+				</section>
+				<section data-background="#fff">
+				
+					<h4>Nested Loops Functional</h4>
+					<div id="flexcontain">
+						<div class="box yellow" style="font-size: 22px; margin: 10px; min-width: 650px; background-color: #ffffff;">
+							<img src="images/structures/nested_loop.gif" width="500" alt="nested loop animation">
+						</div>
+						<div class="box red" style="font-size: 22px; margin: 10px; height: 245px; background-color: #ddd; color: #111;"><p>Nested loops never overlap. An inner loop is always completely contained within an outer loop</p></div>
+						<div class="box blue" style="font-size: 22px; margin: 10px; height: 245px; background-color: #ddd; color: #111;"><p>The total number of iterations executed by a nested loop is the number of inner loop iterations times the number of outer loop iterations</p></div>
+						<div class="box green" style="font-size: 22px; margin: 10px; height: 245px; background-color: #ddd; color: #111;"><p>An inner loop goes through all of its iterations each time its outer loop goes through just one iteration</p></div>
+
+
+					</div>
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Using For Loops</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 34px;">
+
+								<li><b>Definite Loop</b></li>
+								<ul>
+									<li>Provides <b>three actions</b> in one structure</li>
+									<li>Initializes  | Evaluates </li>
+								</ul>
+								<li><em>while</em> statement could be used in place of <em>for</em> statement</b></li>
+								<ul>
+									<li><b>Pretest Loop:</b> the loop control variable is tested before each iteration <br>-  <em>for</em> loops and <em>while<em> loops are pretest loops</em></em></li>
+									<li><b>Posttest:</b> the loop control variable is tested after each iteration <br> - <em>do...while</em> is a posttest loop</li>
+
+								</ul>
+							</ul>
+						</div>
+						
+					</div>
+					<img src="images/structures/forstatement.png" width="600" alt="for statement diagram">
+				</section>
+				<section data-background="#fff">
+					<h3>Activity 6</h3>
+					<img src="images/structures/calendar_days.jpg" width="490" alt="2014 calendar graphic">
+					<div id="flexcontain">
+						<div class="box red" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 1</b> <br> Observe the diagram above and declare variables for the data you will use in program</p></div>
+						<div class="box blue" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 2</b> <br>Think through and apply the correct structures to fulfill the requirements of the program.</p></div>
+						<div class="box green" style="font-size: 18px; margin: 10px; background-color: #eee; height: 220px; color: #111;"><p><b style="font-size: 28px;">Step 3</b> <br>Code the program in C# and output the month day along with the correct number of days for each month.</p></div>
+
+					</div>
+					
+				
+				</section>
+				<section data-background="#fff">
+					<h3>Loop Use Cases</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 30px;">
+
+								<li><b>Using a loop to accumulate totals</b></li>
+								<ul>
+									<li>- Examples</li>
+									<ul>
+										<li>Business reports often include totals</li>
+										<li>List of real estate sold and total value</li>
+									</ul>
+								</ul>
+								<li><b>Accumulator:</b> variable that gathers values</li>
+								<ul>
+									<li>- Similar to a counter</li>
+									<ul>
+										<li>Counter increments by 1</li>
+										<li>Accumulator increments by some value</li>
+									</ul>
+								</ul>
+								<li><b>Accumulators require three actions</b></li>
+								<ul>
+									<li style="background-color: #ffe600;">Initialize the accumulator to 0</li>
+									<li style="background-color: #26e600;">Accumulators are altered: once for every data set processed</li>
+									<li style="background-color: #44c8f5;">At the end of processing, accumulators are output</li>
+								</ul>
+							</ul>
+						</div>
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/accum_loop.PNG" width="500" alt="Accumulator Loop diagram">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Using loops to validate data</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/loop_validation.png" width="500" alt="Loop validation diagram">
+						</div>
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 30px;">
+
+								<li><b>Defensive programming:</b> preparing for all possible errors before they occur</li>
+								<ul>
+									<li>When prompting a user for data, no guarantee that data is valid</li>
+								</ul>
+								<li>Good defensive programs try to foresee all possible inconsistencies and errors</li>
+								<li><b>Validate data:</b> make sure data falls in acceptable ranges (month values between 1 and 12)</li>
+								<li><b>GIGO:</b> Garbage in, garbage out</li>
+								<ul>
+									<li>Unvalidatedinput will result in erroneous output</li>
+								</ul>
+							</ul>
+						</div>
+
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Limiting a reprompting Loop</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style=" margin: 10px;">
+							<img src="images/structures/limiting_loop.png" width="500" alt="Limiting Loop Reprompt diagram">
+						</div>
+						<div class="box_two" style="margin: 10px;">
+							<ul style="font-size: 30px;">
+
+								<li><b>Reprompting can be frustrating to a user if it continues indefinitely</b></li>
+
+								<li><b>Maintain a count of the number of reprompts</b> </li>
+								<li><b>Forcing</b> a data item means:</li>
+								<ul>
+									<li>Override incorrect data by setting the variable to a specific value</li>
+								</ul>
+							</ul>
+						</div>
+
+					</div>
+				</section>
+				<!--<section data-background="#fff">
+					<h3>Single Folder Structure</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">files are placed in the root folder.  Images, JS files, css files all exist in root folder.</li><br>
+   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/folderstructure.PNG" alt="picture of folder structure">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>Hierarchical Folder Structure</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">additional folders are created within the root folder to categorize the different type of files.  Images, JS files, css files will exist within their respective folder.</li><br>
+   
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/webtool/hierarcialstructure.PNG" alt="picture of folder structure">
+						</div>
+					</div>
+				</section>
+				<section data-background="#fff">
+					<h3>File Structure Best Practice</h3>
+					
+					<div id="flexcontain">
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<ul>	
+								<li style="font-size: 28px;">Basic structure we'll use is similar to picture on the left.</li>
+								<li style="font-size: 28px;">Different file structures will look different based on technology stack and type of project.</li>
+   								<li style="font-size: 28px;">The idea is to have order and structure to your files</li>
+							</ul>
+						</div>
+						<div class="box_two" style="font-size: 22px; margin: 10px;">
+							<img src="images/webtool/basicstructure.png" alt="picture of folder structure">
+						</div>
+					</div>
+				</section-->
+				<section data-background="#eee">
+				    <h2>References/Resources</h2>
+				    <ul>
+				        <li>https://www.qcode.in/learn-react-by-creating-a-comment-app/</li>
+				        <li>https://www.w3schools.com/REACT/react_props.asp</li>
+				        <li>https://blog.logrocket.com/the-new-react-lifecycle-methods-in-plain-approachable-language-61a2105859f3/</li>
+				        <li><a href="https://codeburst.io/getting-started-with-react-router-5c978f70df91">React Router Walk through</a></li>
+				      
+
+               
+				    </ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
