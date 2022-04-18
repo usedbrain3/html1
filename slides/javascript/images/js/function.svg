@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="700" viewBox="0 0 700 700">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""
+            xmlns:xmp="http://ns.adobe.com/xap/1.0/">
+         <xmp:CreatorTool>Adobe Photoshop CC 2018 (Windows)</xmp:CreatorTool>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1, .cls-2, .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-1 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        font-size: 16px;
+      }
+
+      .cls-10, .cls-2, .cls-3 {
+        font-family: Calibri;
+      }
+
+      .cls-10, .cls-3 {
+        font-size: 26px;
+      }
+
+      .cls-3, .cls-9 {
+        fill: #cd0000;
+      }
+
+      .cls-10, .cls-4 {
+        fill: #dda62e;
+      }
+
+      .cls-5 {
+        fill: #eee;
+      }
+
+      .cls-6 {
+        fill: #809fa4;
+      }
+
+      .cls-8 {
+        fill: #141313;
+      }
+
+      .cls-11 {
+        fill: #2b628c;
+      }
+    </style>
+  </defs>
+  <g id="Artboard_1" data-name="Artboard 1">
+    <path class="cls-1" d="M179,183h2v63h-2V183Z"/>
+    <path id="Shape_1_copy" data-name="Shape 1 copy" class="cls-1" d="M329,183h2v63h-2V183Z"/>
+    <path id="Shape_1_copy_2" data-name="Shape 1 copy 2" class="cls-1" d="M501,183h2v63h-2V183Z"/>
+    <path id="Shape_1_copy_3" data-name="Shape 1 copy 3" class="cls-1" d="M501,183h2v63h-2V183Z"/>
+    <text id="function_keyword" data-name="function keyword" class="cls-2" x="117.25" y="159.875">function keyword</text>
+    <text id="calling_or_involking_function" data-name="calling or involking function" class="cls-2" x="118.25" y="453.875">calling or involking function</text>
+    <text id="arguement_passed_into_function" data-name="arguement passed into function" class="cls-2" x="279.25" y="547.875">arguement passed into function</text>
+    <text id="name" class="cls-2" x="308.25" y="159.875">name</text>
+    <text id="parameter_s_" data-name="parameter(s)" class="cls-2" x="455.25" y="162.875">parameter(s)</text>
+    <text id="return_keyword" data-name="return keyword" class="cls-2" x="151.25" y="298.875">return keyword</text>
+    <text id="function_displayGreeting_parameter_return_Hello_parame" data-name="function displayGreeting(parameter){  return “Hello  ” + parame" class="cls-3" x="132.25" y="268.875">function <tspan class="cls-4">displayGreeting<tspan class="cls-5">(<tspan class="cls-6">parameter</tspan>)<tspan class="cls-7">{</tspan></tspan></tspan><tspan class="cls-8" x="132.25" dy="31.2">	<tspan class="cls-9">return</tspan> <tspan class="cls-4">“Hello  ”</tspan> <tspan class="cls-5">+</tspan> <tspan class="cls-6">parameter<tspan class="cls-7">;</tspan></tspan></tspan><tspan class="cls-7" x="132.25" dy="31.2">} </tspan></text>
+    <path class="cls-1" d="M203,306h2v17h-2V306Z"/>
+    <path class="cls-1" d="M192,463h2v18h-2V463Z"/>
+    <path id="Shape_3_copy" data-name="Shape 3 copy" class="cls-1" d="M368,511h2v18h-2V511Z"/>
+    <text id="displayGreeting_Chris_" data-name="displayGreeting(”Chris”);" class="cls-10" x="131.25" y="499.875">displayGreeting<tspan class="cls-7">(<tspan class="cls-11">”Chris”</tspan>);</tspan></text>
+  </g>
+</svg>
