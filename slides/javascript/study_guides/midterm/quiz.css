@@ -1,0 +1,344 @@
+/* CSS reset */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 5px #00cc99;*/
+    border: 2px solid white;
+    background-color: #070708;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #070708;
+    width: 18px;
+    border: 2px solid white;
+}
+
+/* Body Styling */
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #070708;
+    font-family: 'Press Start 2P', cursive;
+}
+
+header{
+    height: 18.5vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    border-bottom: 2px solid white;
+    color: white;
+}
+
+#talleys{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    width: 300px;
+}
+
+#card_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 72vh;
+    width: 100%;
+}
+
+#card{
+    height: 45vh;
+    width:  60vw;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5em;
+    color: white;
+    padding: 20px;
+}
+
+/* #card:hover{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+} */
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  } 
+
+#button_container{
+    width: 100%;
+    display: flex;;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 5vh;
+}
+
+#truefalse{
+    width: 40vw;
+    background-color: #070708;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.button{
+    width: 10vw;
+    padding: 1.5rem;
+    border: 2px solid white;
+    border-radius: 10px;
+    color: white;
+    background-color: #070708;
+    transition: all .3s ease-out;
+}
+
+.button:hover, .button:hover h2{
+    color: #337EDD;
+    border-radius: 50px;
+}
+
+#question_container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#box{
+    width: 60vw;
+    border: 2px solid white;
+    color: white;
+    border-radius: 10px;
+    height: auto;
+    padding: 3vmax;
+}
+
+#truefalse{
+    position: absolute;
+}
+
+#next{
+    position: absolute;
+}
+
+footer{
+    height: 8.5vh;
+    width: 100%;
+    border-top: 2px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Font Styling */
+h1{
+    font-size: 30px;
+    line-height: 1.25em;
+}
+
+h2{
+    font-size: 20px;
+    color: white;
+}
+
+h3{
+    font-size: 18px;
+}
+
+#box h1, #box h2{
+    line-height: 1.5em;
+}
+
+#box h2, #box h3{
+    margin-left: 1vw;
+}
+
+.button h2{
+    font-size: 15px;
+    transition: all .3s ease-out;
+}
+
+#card p{
+    font-size: 25px;
+}
+
+.answer_text{
+    font-size: 40px;
+}
+
+p{
+    font-size: 8px;
+    width: 100%;
+    line-height: 1.5em;
+    color: white;
+}
+
+span{
+    width: 100%;
+}
+
+#show_questions{
+    font-size: 10px;
+    transition:color .2s ease-out;
+}
+
+#show_questions:hover{
+    color: #FFDD55;
+}
+
+img{
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1000px){
+    header{
+        padding-left: 10vw;
+        padding-right: 10vw;
+        justify-content: space-between;
+    }
+
+    #talleys{
+        width: 200px;
+    }
+
+    #card{
+        width: 80vw;
+    }
+
+    #box{
+        width: 80vw;
+    }
+
+    #truefalse{
+        width: 80%;
+    }
+
+    .button{
+        width: 20vw;
+    }
+
+    h1{
+        font-size: 25px;
+    }
+
+    h2{
+        font-size: 15px;
+    }
+
+    h3{
+        font-size: 12px;
+    }
+
+    #card p{
+        font-size: 20px;
+    }
+    
+}
+
+@media screen and (max-width: 500px){
+    header{
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        height: 20vh;
+    }
+
+    #talleys{
+        width: 150px;
+    }
+
+    footer{
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    h1{
+        font-size: 20px;
+        margin-top: 1vh;
+    }
+
+    img{
+        height: 30px;
+        margin-bottom: 10px;
+    }
+
+    p{
+        font-size: 5px;
+    }
+
+    #show_questions{
+        font-size: 10px;
+    }
+    
+    #card{
+        font-size: 18px;
+    }
+
+    #truefalse{
+        width: 100%;
+    }
+
+    .answer_text{
+        font-size: 25px;
+    }
+}
