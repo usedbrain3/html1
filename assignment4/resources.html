@@ -1,0 +1,170 @@
+<!-- This is my comment -->
+<!-- Your name - Template-->
+
+    <meta charset="UTF-8">
+    <meta name="description" content="CWeb 1010 at Dunwoody">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="your name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HTML, CSS & JavaScript - Template</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {text-decoration: none;
+    color: green;
+    }
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+.logo_container{
+width: 60%;
+margin-top:5px;
+float: left;
+}
+
+.nav_container{
+width: 40%;
+margin-top:5px;
+float: right;
+text-align: right;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  background-color: #96E6B3;
+  padding: 20px;
+  color: white;
+  font-size: 22px;
+  font-family: sans-serif;
+
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #CCFCCB;
+  height: 600px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.left_column{
+float:right;
+width: 30%;
+padding: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #F1FFFA;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #464E47;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+.clear{clear: both;}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+<div class="logo_container">
+<img src="images/tt2.png" height="100px" alt="logo">
+</div>
+    
+<div class="nav_container">
+  <nav>
+    <ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="resources.html">Resources</a></li>
+    </ul>
+  </nav>
+  </div>
+ 
+ <div class="clear"></div>
+ 
+<header>
+  <img src="images/banner_placeholder1.jpg" alt="banner" width="100%">
+</header>
+
+<section>
+ 
+ <div class="left_column">
+   <h2>Mission statement</h2>
+ </div>
+ 
+  <article>
+    <h3>Content text placeholder</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus.</p>
+  
+  <div class="grid-container">
+    <div class="grid-item"><img src="images/350x150.png" alt="350x150 placeholder" ></div>
+    <div class="grid-item"><img src="images/350x150.png" alt="350x150 placeholder" ></div>
+    <div class="grid-item"><img src="images/350x150.png" alt="350x150 placeholder" ></div>  
+  </div>
+  
+  </article>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
+
+</body>
+</html>
+
