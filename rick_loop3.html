@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Rick on a loop">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="author" content="TT">
+        
+        <title>Rick For Loop</title>
+        
+        <style>
+            .background1 {
+            background: url(images/rr2.jpg) repeat;
+            border: 2px solid black;
+            }
+            
+            .opacitybox {
+            margin: 30px;
+            padding: 10px 30px;
+            background-color: #BFDAEE;
+            border: 1px solid black;
+            opacity: 0.7;
+            
+            }
+            
+            .opacitybox p {
+            margin: 5%;
+            line-height: 24px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #000000;
+            }
+            
+            .grid-container {
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            grid-gap: 10px;
+            background-color: #fff;
+            padding: 10px;
+            }
+            
+            .grid-container > div {
+            background-color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 25px;
+            
+            /* Medium devices (tablets, 768px) */
+            @media only screen and (max-width: 400px) {
+            .grid-container {
+            background: blue;
+            font-size: 24px;
+            color: white;
+            grid-template-columns: auto auto ;
+            }
+            } 
+            
+        </style>
+    </head>
+    <body>
+        
+        <div class="background1">
+            <div class="opacitybox">
+                <div class="grid-container">
+                    <div><script src="rr3.js"></script></div>
+                    <div><script src="rr3.js"></script></div>
+                    <div><script src="rr3.js"></script></div>  
+                    <div><script src="rr3.js"></script></div>
+                    
+                </div> 
+               
+            </div><!--end opacitybox-->
+        </div><!--end background1-->
+        
+    </body>
+</html>
